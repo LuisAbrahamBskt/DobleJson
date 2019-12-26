@@ -1,0 +1,1127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Transaccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="Tipo" type="tns:TipoTransaccion" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="TipoTransaccion">
+        <s:restriction base="s:string">
+          <s:enumeration value="Cotizacion" />
+          <s:enumeration value="Emision" />
+          <s:enumeration value="Impresion" />
+          <s:enumeration value="ValidaSerie" />
+          <s:enumeration value="Lista" />
+          <s:enumeration value="Consulta" />
+          <s:enumeration value="Recibos" />
+          <s:enumeration value="CalculaValor" />
+          <s:enumeration value="AmpliacionCobertura" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="TransaccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransaccionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Modelo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModeloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModeloResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Categoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CategoriaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelMun">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Estado" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelMunResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DelMunResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EDOS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EDOSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EDOSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Marca">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Modelo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Categoria" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MarcaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MarcaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubMarca">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Marca" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Modelo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Categoria" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubMarcaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubMarcaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Vehiculo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Marca" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Submarca" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Modelo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VehiculoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VehiculoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Vigencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VigenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VigenciaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FormaPago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FormaPagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FormaPagoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoPersona">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoPersonaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TipoPersonaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Nacionalidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NacionalidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NacionalidadResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Identificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdentificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IdentificacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ocupacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OcupacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OcupacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Bancos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BancosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BancosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Color">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ColorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ColorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodigoPostal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Estado" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Ciudad" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodigoPostalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoPostalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Colonia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Estado" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Ciudad" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="CP" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ColoniaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ColoniaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaSerie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Serie" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaSerieResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidaSerieResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GiroEmpresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GiroEmpresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GiroEmpresaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculaValor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="CveAMIS" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Modelo" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculaValorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculaValorResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CatVeh">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModeloMin" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModeloMax" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Categ" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CatVehResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CatVehResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ColxCP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="CP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ColxCPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ColxCPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperaCotizacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Negocio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NoCot" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperaCotizacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperaCotizacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TransaccionSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaccion" />
+  </wsdl:message>
+  <wsdl:message name="TransaccionSoapOut">
+    <wsdl:part name="parameters" element="tns:TransaccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModeloSoapIn">
+    <wsdl:part name="parameters" element="tns:Modelo" />
+  </wsdl:message>
+  <wsdl:message name="ModeloSoapOut">
+    <wsdl:part name="parameters" element="tns:ModeloResponse" />
+  </wsdl:message>
+  <wsdl:message name="CategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:Categoria" />
+  </wsdl:message>
+  <wsdl:message name="CategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:CategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelMunSoapIn">
+    <wsdl:part name="parameters" element="tns:DelMun" />
+  </wsdl:message>
+  <wsdl:message name="DelMunSoapOut">
+    <wsdl:part name="parameters" element="tns:DelMunResponse" />
+  </wsdl:message>
+  <wsdl:message name="EDOSSoapIn">
+    <wsdl:part name="parameters" element="tns:EDOS" />
+  </wsdl:message>
+  <wsdl:message name="EDOSSoapOut">
+    <wsdl:part name="parameters" element="tns:EDOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="MarcaSoapIn">
+    <wsdl:part name="parameters" element="tns:Marca" />
+  </wsdl:message>
+  <wsdl:message name="MarcaSoapOut">
+    <wsdl:part name="parameters" element="tns:MarcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubMarcaSoapIn">
+    <wsdl:part name="parameters" element="tns:SubMarca" />
+  </wsdl:message>
+  <wsdl:message name="SubMarcaSoapOut">
+    <wsdl:part name="parameters" element="tns:SubMarcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="VehiculoSoapIn">
+    <wsdl:part name="parameters" element="tns:Vehiculo" />
+  </wsdl:message>
+  <wsdl:message name="VehiculoSoapOut">
+    <wsdl:part name="parameters" element="tns:VehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="VigenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:Vigencia" />
+  </wsdl:message>
+  <wsdl:message name="VigenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:VigenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="FormaPagoSoapIn">
+    <wsdl:part name="parameters" element="tns:FormaPago" />
+  </wsdl:message>
+  <wsdl:message name="FormaPagoSoapOut">
+    <wsdl:part name="parameters" element="tns:FormaPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TipoPersonaSoapIn">
+    <wsdl:part name="parameters" element="tns:TipoPersona" />
+  </wsdl:message>
+  <wsdl:message name="TipoPersonaSoapOut">
+    <wsdl:part name="parameters" element="tns:TipoPersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="NacionalidadSoapIn">
+    <wsdl:part name="parameters" element="tns:Nacionalidad" />
+  </wsdl:message>
+  <wsdl:message name="NacionalidadSoapOut">
+    <wsdl:part name="parameters" element="tns:NacionalidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IdentificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:Identificacion" />
+  </wsdl:message>
+  <wsdl:message name="IdentificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:IdentificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="OcupacionSoapIn">
+    <wsdl:part name="parameters" element="tns:Ocupacion" />
+  </wsdl:message>
+  <wsdl:message name="OcupacionSoapOut">
+    <wsdl:part name="parameters" element="tns:OcupacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="BancosSoapIn">
+    <wsdl:part name="parameters" element="tns:Bancos" />
+  </wsdl:message>
+  <wsdl:message name="BancosSoapOut">
+    <wsdl:part name="parameters" element="tns:BancosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ColorSoapIn">
+    <wsdl:part name="parameters" element="tns:Color" />
+  </wsdl:message>
+  <wsdl:message name="ColorSoapOut">
+    <wsdl:part name="parameters" element="tns:ColorResponse" />
+  </wsdl:message>
+  <wsdl:message name="CodigoPostalSoapIn">
+    <wsdl:part name="parameters" element="tns:CodigoPostal" />
+  </wsdl:message>
+  <wsdl:message name="CodigoPostalSoapOut">
+    <wsdl:part name="parameters" element="tns:CodigoPostalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ColoniaSoapIn">
+    <wsdl:part name="parameters" element="tns:Colonia" />
+  </wsdl:message>
+  <wsdl:message name="ColoniaSoapOut">
+    <wsdl:part name="parameters" element="tns:ColoniaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidaSerieSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaSerie" />
+  </wsdl:message>
+  <wsdl:message name="ValidaSerieSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaSerieResponse" />
+  </wsdl:message>
+  <wsdl:message name="GiroEmpresaSoapIn">
+    <wsdl:part name="parameters" element="tns:GiroEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="GiroEmpresaSoapOut">
+    <wsdl:part name="parameters" element="tns:GiroEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculaValorSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculaValor" />
+  </wsdl:message>
+  <wsdl:message name="CalculaValorSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculaValorResponse" />
+  </wsdl:message>
+  <wsdl:message name="CatVehSoapIn">
+    <wsdl:part name="parameters" element="tns:CatVeh" />
+  </wsdl:message>
+  <wsdl:message name="CatVehSoapOut">
+    <wsdl:part name="parameters" element="tns:CatVehResponse" />
+  </wsdl:message>
+  <wsdl:message name="ColxCPSoapIn">
+    <wsdl:part name="parameters" element="tns:ColxCP" />
+  </wsdl:message>
+  <wsdl:message name="ColxCPSoapOut">
+    <wsdl:part name="parameters" element="tns:ColxCPResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaCotizacionSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperaCotizacion" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaCotizacionSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperaCotizacionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="Transaccion">
+      <wsdl:input message="tns:TransaccionSoapIn" />
+      <wsdl:output message="tns:TransaccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Modelo">
+      <wsdl:input message="tns:ModeloSoapIn" />
+      <wsdl:output message="tns:ModeloSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Categoria">
+      <wsdl:input message="tns:CategoriaSoapIn" />
+      <wsdl:output message="tns:CategoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelMun">
+      <wsdl:input message="tns:DelMunSoapIn" />
+      <wsdl:output message="tns:DelMunSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EDOS">
+      <wsdl:input message="tns:EDOSSoapIn" />
+      <wsdl:output message="tns:EDOSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Marca">
+      <wsdl:input message="tns:MarcaSoapIn" />
+      <wsdl:output message="tns:MarcaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubMarca">
+      <wsdl:input message="tns:SubMarcaSoapIn" />
+      <wsdl:output message="tns:SubMarcaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Vehiculo">
+      <wsdl:input message="tns:VehiculoSoapIn" />
+      <wsdl:output message="tns:VehiculoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Vigencia">
+      <wsdl:input message="tns:VigenciaSoapIn" />
+      <wsdl:output message="tns:VigenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FormaPago">
+      <wsdl:input message="tns:FormaPagoSoapIn" />
+      <wsdl:output message="tns:FormaPagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoPersona">
+      <wsdl:input message="tns:TipoPersonaSoapIn" />
+      <wsdl:output message="tns:TipoPersonaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Nacionalidad">
+      <wsdl:input message="tns:NacionalidadSoapIn" />
+      <wsdl:output message="tns:NacionalidadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Identificacion">
+      <wsdl:input message="tns:IdentificacionSoapIn" />
+      <wsdl:output message="tns:IdentificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ocupacion">
+      <wsdl:input message="tns:OcupacionSoapIn" />
+      <wsdl:output message="tns:OcupacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Bancos">
+      <wsdl:input message="tns:BancosSoapIn" />
+      <wsdl:output message="tns:BancosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Color">
+      <wsdl:input message="tns:ColorSoapIn" />
+      <wsdl:output message="tns:ColorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodigoPostal">
+      <wsdl:input message="tns:CodigoPostalSoapIn" />
+      <wsdl:output message="tns:CodigoPostalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Colonia">
+      <wsdl:input message="tns:ColoniaSoapIn" />
+      <wsdl:output message="tns:ColoniaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaSerie">
+      <wsdl:input message="tns:ValidaSerieSoapIn" />
+      <wsdl:output message="tns:ValidaSerieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GiroEmpresa">
+      <wsdl:input message="tns:GiroEmpresaSoapIn" />
+      <wsdl:output message="tns:GiroEmpresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculaValor">
+      <wsdl:input message="tns:CalculaValorSoapIn" />
+      <wsdl:output message="tns:CalculaValorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CatVeh">
+      <wsdl:input message="tns:CatVehSoapIn" />
+      <wsdl:output message="tns:CatVehSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ColxCP">
+      <wsdl:input message="tns:ColxCPSoapIn" />
+      <wsdl:output message="tns:ColxCPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCotizacion">
+      <wsdl:input message="tns:RecuperaCotizacionSoapIn" />
+      <wsdl:output message="tns:RecuperaCotizacionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Transaccion">
+      <soap:operation soapAction="http://tempuri.org/Transaccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Modelo">
+      <soap:operation soapAction="http://tempuri.org/Modelo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Categoria">
+      <soap:operation soapAction="http://tempuri.org/Categoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelMun">
+      <soap:operation soapAction="http://tempuri.org/DelMun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EDOS">
+      <soap:operation soapAction="http://tempuri.org/EDOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Marca">
+      <soap:operation soapAction="http://tempuri.org/Marca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubMarca">
+      <soap:operation soapAction="http://tempuri.org/SubMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vehiculo">
+      <soap:operation soapAction="http://tempuri.org/Vehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vigencia">
+      <soap:operation soapAction="http://tempuri.org/Vigencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FormaPago">
+      <soap:operation soapAction="http://tempuri.org/FormaPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoPersona">
+      <soap:operation soapAction="http://tempuri.org/TipoPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Nacionalidad">
+      <soap:operation soapAction="http://tempuri.org/Nacionalidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Identificacion">
+      <soap:operation soapAction="http://tempuri.org/Identificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ocupacion">
+      <soap:operation soapAction="http://tempuri.org/Ocupacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Bancos">
+      <soap:operation soapAction="http://tempuri.org/Bancos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Color">
+      <soap:operation soapAction="http://tempuri.org/Color" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodigoPostal">
+      <soap:operation soapAction="http://tempuri.org/CodigoPostal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Colonia">
+      <soap:operation soapAction="http://tempuri.org/Colonia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaSerie">
+      <soap:operation soapAction="http://tempuri.org/ValidaSerie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiroEmpresa">
+      <soap:operation soapAction="http://tempuri.org/GiroEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculaValor">
+      <soap:operation soapAction="http://tempuri.org/CalculaValor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CatVeh">
+      <soap:operation soapAction="http://tempuri.org/CatVeh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ColxCP">
+      <soap:operation soapAction="http://tempuri.org/ColxCP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCotizacion">
+      <soap:operation soapAction="http://tempuri.org/RecuperaCotizacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Transaccion">
+      <soap12:operation soapAction="http://tempuri.org/Transaccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Modelo">
+      <soap12:operation soapAction="http://tempuri.org/Modelo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Categoria">
+      <soap12:operation soapAction="http://tempuri.org/Categoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelMun">
+      <soap12:operation soapAction="http://tempuri.org/DelMun" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EDOS">
+      <soap12:operation soapAction="http://tempuri.org/EDOS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Marca">
+      <soap12:operation soapAction="http://tempuri.org/Marca" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubMarca">
+      <soap12:operation soapAction="http://tempuri.org/SubMarca" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vehiculo">
+      <soap12:operation soapAction="http://tempuri.org/Vehiculo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vigencia">
+      <soap12:operation soapAction="http://tempuri.org/Vigencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FormaPago">
+      <soap12:operation soapAction="http://tempuri.org/FormaPago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoPersona">
+      <soap12:operation soapAction="http://tempuri.org/TipoPersona" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Nacionalidad">
+      <soap12:operation soapAction="http://tempuri.org/Nacionalidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Identificacion">
+      <soap12:operation soapAction="http://tempuri.org/Identificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ocupacion">
+      <soap12:operation soapAction="http://tempuri.org/Ocupacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Bancos">
+      <soap12:operation soapAction="http://tempuri.org/Bancos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Color">
+      <soap12:operation soapAction="http://tempuri.org/Color" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodigoPostal">
+      <soap12:operation soapAction="http://tempuri.org/CodigoPostal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Colonia">
+      <soap12:operation soapAction="http://tempuri.org/Colonia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaSerie">
+      <soap12:operation soapAction="http://tempuri.org/ValidaSerie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiroEmpresa">
+      <soap12:operation soapAction="http://tempuri.org/GiroEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculaValor">
+      <soap12:operation soapAction="http://tempuri.org/CalculaValor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CatVeh">
+      <soap12:operation soapAction="http://tempuri.org/CatVeh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ColxCP">
+      <soap12:operation soapAction="http://tempuri.org/ColxCP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCotizacion">
+      <soap12:operation soapAction="http://tempuri.org/RecuperaCotizacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://server.anaseguros.com.mx/ananetws/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://server.anaseguros.com.mx/ananetws/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

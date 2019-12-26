@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://qbcenter.qualitas.com.mx/wsTarifa/wsTarifa.asmx?wsdl" docRef="http://qbcenter.qualitas.com.mx/wsTarifa/wsTarifa.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://qbcenter.qualitas.com.mx/wsTarifa/wsTarifa.asmx" xmlns:q1="http://tempuri.org/WSQBC/QBCDE" binding="q1:wsTarifaSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://qbcenter.qualitas.com.mx/wsTarifa/wsTarifa.asmx" xmlns:q2="http://tempuri.org/WSQBC/QBCDE" binding="q2:wsTarifaSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

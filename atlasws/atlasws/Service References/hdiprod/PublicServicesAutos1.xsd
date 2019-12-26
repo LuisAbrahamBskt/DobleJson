@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://unoseguros.com/services/emision/2009" elementFormDefault="qualified" targetNamespace="http://unoseguros.com/services/emision/2009" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="CuponesPagarEmitir">
+    <xs:sequence>
+      <xs:element name="Cupon" nillable="true" type="xs:string" />
+      <xs:element name="Km" type="xs:decimal" />
+      <xs:element name="Dias" type="xs:int" />
+      <xs:element name="TitularCupon" nillable="true" type="xs:string" />
+      <xs:element name="NumCuentaCupon" nillable="true" type="xs:string" />
+      <xs:element name="CvvCupon" nillable="true" type="xs:string" />
+      <xs:element name="VenceTarjetaCupon" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CuponesPagarEmitir" nillable="true" type="tns:CuponesPagarEmitir" />
+  <xs:complexType name="CuponesIniciarViaje">
+    <xs:sequence>
+      <xs:element name="Cupon" nillable="true" type="xs:string" />
+      <xs:element name="Km" type="xs:decimal" />
+      <xs:element name="Dias" type="xs:int" />
+      <xs:element name="TitularCupon" nillable="true" type="xs:string" />
+      <xs:element name="NumCuentaCupon" nillable="true" type="xs:string" />
+      <xs:element name="CvvCupon" nillable="true" type="xs:string" />
+      <xs:element name="VenceTarjetaCupon" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CuponesIniciarViaje" nillable="true" type="tns:CuponesIniciarViaje" />
+</xs:schema>

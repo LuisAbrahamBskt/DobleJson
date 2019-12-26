@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5c300100-77cc-4a88-abf9-9e762b710bf7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PublicServicesAutos.xsd" MetadataType="Schema" ID="d52bdf91-a0ad-4031-aafe-a9483be49841" SourceId="1" SourceUrl="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd2" />
+    <MetadataFile FileName="PublicServicesAutos.disco" MetadataType="Disco" ID="ce67ba96-7963-450f-80ff-07ed70f3b688" SourceId="1" SourceUrl="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?disco" />
+    <MetadataFile FileName="PublicServicesAutos1.xsd" MetadataType="Schema" ID="9cbb377a-9295-4a64-829b-0ad7223f6574" SourceId="1" SourceUrl="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd4" />
+    <MetadataFile FileName="PublicServicesAutos2.xsd" MetadataType="Schema" ID="8ac05fa1-9256-4487-9b16-383f53d28e73" SourceId="1" SourceUrl="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd6" />
+    <MetadataFile FileName="PublicServicesAutos3.xsd" MetadataType="Schema" ID="63ab2780-aa4a-4d86-814b-fd2e0bf80570" SourceId="1" SourceUrl="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd1" />
+    <MetadataFile FileName="PublicServicesAutos4.xsd" MetadataType="Schema" ID="503be115-7fd5-4940-96d0-a11026d048b0" SourceId="1" SourceUrl="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd3" />
+    <MetadataFile FileName="PublicServicesAutos.wsdl" MetadataType="Wsdl" ID="380057c0-6dfe-4dbb-9d54-468a51f3aadf" SourceId="1" SourceUrl="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="PublicServicesAutos1.wsdl" MetadataType="Wsdl" ID="41efbc90-0eba-4305-a105-9364c7430cd4" SourceId="1" SourceUrl="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?wsdl" />
+    <MetadataFile FileName="PublicServicesAutos5.xsd" MetadataType="Schema" ID="5b68a974-b446-45b7-a068-4c433e4cff71" SourceId="1" SourceUrl="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd8" />
+    <MetadataFile FileName="PublicServicesAutos6.xsd" MetadataType="Schema" ID="eaed0528-71eb-47ab-aff0-39260f40ad87" SourceId="1" SourceUrl="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd9" />
+    <MetadataFile FileName="PublicServicesAutos7.xsd" MetadataType="Schema" ID="391db59f-fb7a-4da5-94a6-9bdca3330afc" SourceId="1" SourceUrl="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd5" />
+    <MetadataFile FileName="PublicServicesAutos8.xsd" MetadataType="Schema" ID="cbd38dd9-47c4-4132-8dfc-48c62191396c" SourceId="1" SourceUrl="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd0" />
+    <MetadataFile FileName="PublicServicesAutos9.xsd" MetadataType="Schema" ID="5e038eb2-cb23-42b8-ac13-7916740abbd8" SourceId="1" SourceUrl="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd7" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

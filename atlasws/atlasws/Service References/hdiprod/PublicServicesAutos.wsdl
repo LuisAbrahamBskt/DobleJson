@@ -1,0 +1,1323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://hdi.com.mx/services/public" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://hdi.com.mx/services/public" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://hdi.com.mx/services/public/Imports">
+      <xsd:import schemaLocation="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd0" namespace="http://hdi.com.mx/services/public" />
+      <xsd:import schemaLocation="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd3" namespace="urn:public.services.autos.datacontracts" />
+      <xsd:import schemaLocation="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd4" namespace="http://unoseguros.com/services/emision/2009" />
+      <xsd:import schemaLocation="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Public.Services.Autos.DataContracts" />
+      <xsd:import schemaLocation="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd7" namespace="http://unoseguros.com/services/CotizacionAutos/2010" />
+      <xsd:import schemaLocation="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd8" />
+      <xsd:import schemaLocation="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Public.Services.Autos.MessageContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MultiPolizaAImprimirRequest">
+    <wsdl:part name="parameters" element="tns:MultiPolizaAImprimirRequest" />
+  </wsdl:message>
+  <wsdl:message name="ByteArrayMessage">
+    <wsdl:part name="ByteArrayContract" element="tns:ByteArrayContract" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerTiposSumaAsegurada_InputMessage" />
+  <wsdl:message name="ObtenerTiposSumaAseguradaResponse">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposSumaAseguradaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CaracteristicasVehiculoFRMessage">
+    <wsdl:part name="parameters" element="tns:CaracteristicasVehiculoFRMessage" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSumaAseguradaFRRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerSumaAseguradaFRRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSumaAseguradaFRResponse">
+    <wsdl:part name="parameters" element="tns:ObtenerSumaAseguradaFRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerFactoresMultianualesOficinaRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerFactoresMultianualesOficinaRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerFactoresMultianualesOficinaResponse">
+    <wsdl:part name="parameters" element="tns:ObtenerFactoresMultianualesOficinaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DatosNegocioRequest">
+    <wsdl:part name="parameters" element="tns:DatosNegocioRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerFormasPagoResponse">
+    <wsdl:part name="ListaFormasPago" element="tns:ListaFormasPago" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsosVehiculoResponse">
+    <wsdl:part name="ListaUsos" element="tns:ListaUsos" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerConductoResponse">
+    <wsdl:part name="ListaConductos" element="tns:ListaConductos" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTiposVehiculoResponse">
+    <wsdl:part name="TiposVehiculo" element="tns:TiposVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPaquetesNegocioRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerPaquetesNegocioRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPaquetesResponse">
+    <wsdl:part name="InformacionPaquetes" element="tns:InformacionPaquetes" />
+  </wsdl:message>
+  <wsdl:message name="EmitirCotizacionRequest">
+    <wsdl:part name="parameters" element="tns:EmitirCotizacionRequest" />
+  </wsdl:message>
+  <wsdl:message name="EmitirCotizacionResponse">
+    <wsdl:part name="InformacionPoliza" element="tns:InformacionPoliza" />
+  </wsdl:message>
+  <wsdl:message name="PolizaImprimirPorNegocioRequest">
+    <wsdl:part name="parameters" element="tns:PolizaImprimirPorNegocioRequest" />
+  </wsdl:message>
+  <wsdl:message name="PaquetesCoberturasPorVehiculoRequest">
+    <wsdl:part name="parameters" element="tns:PaquetesCoberturasPorVehiculoRequest" />
+  </wsdl:message>
+  <wsdl:message name="PaquetesCoberturasPorVehiculoResponse">
+    <wsdl:part name="parameters" element="tns:PaquetesCoberturasPorVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmiEndBenPreferenteRequest">
+    <wsdl:part name="parameters" element="tns:EmiEndBenPreferenteRequest" />
+  </wsdl:message>
+  <wsdl:message name="EmiEndResponse">
+    <wsdl:part name="parameters" element="tns:EmiEndResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmiEndDatosVehiculoRequest">
+    <wsdl:part name="parameters" element="tns:EmiEndDatosVehiculoRequest" />
+  </wsdl:message>
+  <wsdl:message name="EmiEndCondCobroATarCredNegocioRequest">
+    <wsdl:part name="parameters" element="tns:EmiEndCondCobroATarCredNegocioRequest" />
+  </wsdl:message>
+  <wsdl:message name="EmiEndNegocioResponse">
+    <wsdl:part name="parameters" element="tns:EmiEndNegocioResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmiEndCondCobroATarCredRequest">
+    <wsdl:part name="parameters" element="tns:EmiEndCondCobroATarCredRequest" />
+  </wsdl:message>
+  <wsdl:message name="EmiEndCondCobroACtaCheqRequest">
+    <wsdl:part name="parameters" element="tns:EmiEndCondCobroACtaCheqRequest" />
+  </wsdl:message>
+  <wsdl:message name="EmiEndCondCobroAEfecRequest">
+    <wsdl:part name="parameters" element="tns:EmiEndCondCobroAEfecRequest" />
+  </wsdl:message>
+  <wsdl:message name="EmiEndCondCobroACtaCheqNegocioRequest">
+    <wsdl:part name="parameters" element="tns:EmiEndCondCobroACtaCheqNegocioRequest" />
+  </wsdl:message>
+  <wsdl:message name="EmiEndDatosCtePFRequest">
+    <wsdl:part name="parameters" element="tns:EmiEndDatosCtePFRequest" />
+  </wsdl:message>
+  <wsdl:message name="EmiEndDatosCtePMRequest">
+    <wsdl:part name="parameters" element="tns:EmiEndDatosCtePMRequest" />
+  </wsdl:message>
+  <wsdl:message name="ImprimirEndosoRequest">
+    <wsdl:part name="parameters" element="tns:ImprimirEndosoRequest" />
+  </wsdl:message>
+  <wsdl:message name="ImprimirEndosoResponse">
+    <wsdl:part name="parameters" element="tns:ImprimirEndosoResponse" />
+  </wsdl:message>
+  <wsdl:message name="PolizaImprimirEndosoRequest">
+    <wsdl:part name="parameters" element="tns:PolizaImprimirEndosoRequest" />
+  </wsdl:message>
+  <wsdl:message name="PaquetesCoberturasPorPaqueteRequest">
+    <wsdl:part name="parameters" element="tns:PaquetesCoberturasPorPaqueteRequest" />
+  </wsdl:message>
+  <wsdl:message name="PaquetesCoberturasPorPaqueteResponse">
+    <wsdl:part name="parameters" element="tns:PaquetesCoberturasPorPaqueteResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmiEndCancelProrrataRequest">
+    <wsdl:part name="parameters" element="tns:EmiEndCancelProrrataRequest" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_CargaListaMotivoCancelaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:CargaListaMotivoCancelaciones" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_CargaListaMotivoCancelaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CargaListaMotivoCancelacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="PolizaAImprimir">
+    <wsdl:part name="parameters" element="tns:PolizaAImprimir" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRecibosDesglosadosRequest">
+    <wsdl:part name="SolicitudRecibosDesglosados" element="tns:SolicitudRecibosDesglosados" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRecibosDesglosadosResponse">
+    <wsdl:part name="informacionRecibosDesglosados" element="tns:informacionRecibosDesglosados" />
+  </wsdl:message>
+  <wsdl:message name="PagarEmitirCotizacionBrokerResponse">
+    <wsdl:part name="parameters" element="tns:PagarEmitirCotizacionBrokerResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerCaracteristicasVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCaracteristicasVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerCaracteristicasVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCaracteristicasVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarTarjetaRequest">
+    <wsdl:part name="parameters" element="tns:ValidarTarjetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="ValidarTarjetaResponse">
+    <wsdl:part name="parameters" element="tns:ValidarTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CargarCotizacionRequest">
+    <wsdl:part name="parameters" element="tns:CargarCotizacionRequest" />
+  </wsdl:message>
+  <wsdl:message name="CargarCotizacionResponse">
+    <wsdl:part name="parameters" element="tns:CargarCotizacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="InformacionClienteVehiculoScotiaRequest">
+    <wsdl:part name="parameters" element="tns:InformacionClienteVehiculoScotiaRequest" />
+  </wsdl:message>
+  <wsdl:message name="InformacionClienteVehiculoScotiaResponse">
+    <wsdl:part name="parameters" element="tns:InformacionClienteVehiculoScotiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ValidarNumeroDeSeriePorUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarNumeroDeSeriePorUsuario" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ValidarNumeroDeSeriePorUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarNumeroDeSeriePorUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ValidarNumeroDeSerie_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarNumeroDeSerie" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ValidarNumeroDeSerie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarNumeroDeSerieResponse" />
+  </wsdl:message>
+  <wsdl:message name="InformacionRecibosScotiaRequest">
+    <wsdl:part name="parameters" element="tns:InformacionRecibosScotiaRequest" />
+  </wsdl:message>
+  <wsdl:message name="InformacionRecibosScotiaResponse">
+    <wsdl:part name="parameters" element="tns:InformacionRecibosScotiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ConexionKBB_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConexionKBB" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ConexionKBB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConexionKBBResponse" />
+  </wsdl:message>
+  <wsdl:message name="CatVehiculosRequest">
+    <wsdl:part name="parameters" element="tns:CatVehiculosRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsosRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerUsoRequest" />
+  </wsdl:message>
+  <wsdl:message name="EmiEndCancelProrrataPorNegocioRequest">
+    <wsdl:part name="parameters" element="tns:EmiEndCancelProrrataPorNegocioRequest" />
+  </wsdl:message>
+  <wsdl:message name="CaracteristicasVehiculoFronterizoRequest">
+    <wsdl:part name="parameters" element="tns:CaracteristicasVehiculoFronterizoRequest" />
+  </wsdl:message>
+  <wsdl:message name="CaracteristicasVehiculoFronterizoResponse">
+    <wsdl:part name="parameters" element="tns:CaracteristicasVehiculoFronterizoResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerClaveVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerClaveVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerClaveVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerClaveVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerPaquetesPermitidos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPaquetesPermitidos" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerPaquetesPermitidos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPaquetesPermitidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSumaAseguradaRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerSumaAseguradaRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSumaAseguradaResponse">
+    <wsdl:part name="parameters" element="tns:ObtenerSumaAseguradaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ValidarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ValidarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarCotizacionRequest">
+    <wsdl:part name="parameters" element="tns:GuardarCotizacionRequest" />
+  </wsdl:message>
+  <wsdl:message name="ImprimirCotizacionResponse">
+    <wsdl:part name="parameters" element="tns:ImprimirCotizacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrimaNoDevengadaResponse">
+    <wsdl:part name="parameters" element="tns:PrimaNoDevengadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTiposSumaAseguradaRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposSumaAseguradaRequest" />
+  </wsdl:message>
+  <wsdl:message name="ValidarCodigoDeConfirmacionRequest">
+    <wsdl:part name="parameters" element="tns:ValidarCodigoDeConfirmacionRequest" />
+  </wsdl:message>
+  <wsdl:message name="ValidarCodigoDeConfirmacionResponse">
+    <wsdl:part name="parameters" element="tns:ValidarCodigoDeConfirmacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmitirMultiCotizacionRequest">
+    <wsdl:part name="parameters" element="tns:EmitirMultiCotizacionRequest" />
+  </wsdl:message>
+  <wsdl:message name="EmitirMultiCotizacionResponse">
+    <wsdl:part name="multiInformacionPoliza" element="tns:multiInformacionPoliza" />
+  </wsdl:message>
+  <wsdl:message name="DatosCotizacionFronterizosRequest">
+    <wsdl:part name="parameters" element="tns:DatosCotizacionFronterizosRequest" />
+  </wsdl:message>
+  <wsdl:message name="DatosCotizacionFronterizosResponse">
+    <wsdl:part name="parameters" element="tns:DatosCotizacionFronterizosResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmitirRemanenteRequest">
+    <wsdl:part name="parameters" element="tns:EmitirRemanenteRequest" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_Statuseuser_InputMessage">
+    <wsdl:part name="parameters" element="tns:Statuseuser" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_Statuseuser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StatuseuserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarCotizacionExpressRequest">
+    <wsdl:part name="parameters" element="tns:GuardarCotizacionExpressRequest" />
+  </wsdl:message>
+  <wsdl:message name="GuardarCotizacionResponse">
+    <wsdl:part name="InformacionCotizacion" element="tns:InformacionCotizacion" />
+  </wsdl:message>
+  <wsdl:message name="DatosReciboPagoEnLinea">
+    <wsdl:part name="parameters" element="tns:DatosReciboPagoEnLinea" />
+  </wsdl:message>
+  <wsdl:message name="ParametrosRespuestaPagoRecibo">
+    <wsdl:part name="parameters" element="tns:ParametrosRespuestaPagoRecibo" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerDatosCalculoTarificacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosCalculoTarificacion" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerDatosCalculoTarificacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosCalculoTarificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_VerificarVehiculoxagenteAfasa_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarVehiculoxagenteAfasa" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_VerificarVehiculoxagenteAfasa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarVehiculoxagenteAfasaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IniciarViajeRequest">
+    <wsdl:part name="parameters" element="tns:IniciarViajeRequest" />
+  </wsdl:message>
+  <wsdl:message name="IniciarViajeResponse">
+    <wsdl:part name="parameters" element="tns:IniciarViajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="FinalizarViajeRequest">
+    <wsdl:part name="parameters" element="tns:FinalizarViajeRequest" />
+  </wsdl:message>
+  <wsdl:message name="FinalizarViajeResponse">
+    <wsdl:part name="parameters" element="tns:FinalizarViajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerViajesCoberturaDinamicaRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerViajesCoberturaDinamicaRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerViajesCoberturaDinamicaResponse">
+    <wsdl:part name="parameters" element="tns:ObtenerViajesCoberturaDinamicaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PagoViajeAcumuladosRequest">
+    <wsdl:part name="parameters" element="tns:PagoViajeAcumuladosRequest" />
+  </wsdl:message>
+  <wsdl:message name="PagoViajeAcumuladoResponse">
+    <wsdl:part name="parameters" element="tns:PagoViajeAcumuladoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerViajesCoberturaDinamicaPolizasRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerViajesCoberturaDinamicaPolizasRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerViajesCoberturaDinamicaPolizasResponse">
+    <wsdl:part name="parameters" element="tns:ObtenerViajesCoberturaDinamicaPolizasResponse" />
+  </wsdl:message>
+  <wsdl:message name="PagandoReciboRequest">
+    <wsdl:part name="parameters" element="tns:PagandoReciboRequest" />
+  </wsdl:message>
+  <wsdl:message name="PagandoViajeRequest">
+    <wsdl:part name="parameters" element="tns:PagandoViajeRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerFacturaRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerFacturaRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerXmlRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerXmlRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMultiplesFacturasRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerMultiplesFacturasRequest" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ValidarRelacionGrupoUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarRelacionGrupoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ValidarRelacionGrupoUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarRelacionGrupoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ValidarAsignaDefaultDatosCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarAsignaDefaultDatosCliente" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ValidarAsignaDefaultDatosCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarAsignaDefaultDatosClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="CatalogoDetallesRequest">
+    <wsdl:part name="parameters" element="tns:CatalogoDetallesRequest" />
+  </wsdl:message>
+  <wsdl:message name="CatalogoDetallesResponse">
+    <wsdl:part name="parameters" element="tns:CatalogoDetallesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarCotizGuardadaExpressRequest">
+    <wsdl:part name="parameters" element="tns:RecuperarCotizGuardadaExpressRequest" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarCotizacionGuardadaResponse">
+    <wsdl:part name="parameters" element="tns:RecuperarCotizacionGuardadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmiteCotGuardadaRequest">
+    <wsdl:part name="parameters" element="tns:EmiteCotGuardadaRequest" />
+  </wsdl:message>
+  <wsdl:message name="EmiteCotGuardadaResponse">
+    <wsdl:part name="parameters" element="tns:EmiteCotGuardadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTipoVehiculoRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoVehiculoRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTipoVehiculoResponse">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMultiConfiguracionPaquetesExpressRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerMultiConfiguracionPaquetesExpressRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPaquetesExpressRespose">
+    <wsdl:part name="parameters" element="tns:ObtenerPaquetesExpressRespose" />
+  </wsdl:message>
+  <wsdl:message name="EmitirMultiCotizacionConfiguracionRequest">
+    <wsdl:part name="parameters" element="tns:EmitirMultiCotizacionConfiguracionRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMarcasRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerMarcasRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMarcasResponse">
+    <wsdl:part name="ListaMarcas" element="tns:ListaMarcas" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerAgente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAgente" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerAgente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAgenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerTiposAjuste_InputMessage" />
+  <wsdl:message name="ObtenerTiposAjusteResponse">
+    <wsdl:part name="ListaTiposAjuste" element="tns:ListaTiposAjuste" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPaquetesRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerPaquetesRequest" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerServicios_InputMessage" />
+  <wsdl:message name="ObtenerServiciosResponse">
+    <wsdl:part name="ListaServicios" element="tns:ListaServicios" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTiposRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTiposResponse">
+    <wsdl:part name="ListaTipos" element="tns:ListaTipos" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTiposFiltradosRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposFiltradosRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerVersionesRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerVersionesRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerVersionesResponse">
+    <wsdl:part name="ListaVersiones" element="tns:ListaVersiones" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerVehiculoVersionesRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerVehiculoVersionesRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerVehiculoVersionesResponse">
+    <wsdl:part name="ListaVehiculoVersiones" element="tns:ListaVehiculoVersiones" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerModelosRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerModelosRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerModelosResponse">
+    <wsdl:part name="ListaModelos" element="tns:ListaModelos" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTransmisionesRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerTransmisionesRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTransmisionesResponse">
+    <wsdl:part name="ListaTransmisiones" element="tns:ListaTransmisiones" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTonelajesRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerTonelajesRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTonelajesResponse">
+    <wsdl:part name="ListaTonelajes" element="tns:ListaTonelajes" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerRiesgosCarga_InputMessage" />
+  <wsdl:message name="ObtenerRiesgosCargaResponse">
+    <wsdl:part name="ListaRiesgosCarga" element="tns:ListaRiesgosCarga" />
+  </wsdl:message>
+  <wsdl:message name="StringMessage">
+    <wsdl:part name="StringValue" element="tns:StringValue" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerRemolques_InputMessage" />
+  <wsdl:message name="ObtenerRemolquesResponse">
+    <wsdl:part name="ListaRemolques" element="tns:ListaRemolques" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDescripcionesRequest">
+    <wsdl:part name="CatalogoClaveCollectionValue" element="tns:CatalogoClaveCollectionValue" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDescripcionesResponse">
+    <wsdl:part name="InformacionCaracteristicaCollectionValue" element="tns:InformacionCaracteristicaCollectionValue" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRiesgosRequest">
+    <wsdl:part name="IdRiesgoCarga" element="tns:IdRiesgoCarga" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRiesgosResponse">
+    <wsdl:part name="ListaDescripcionesRiesgos" element="tns:ListaDescripcionesRiesgos" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerMotivosAjuste_InputMessage" />
+  <wsdl:message name="ObtenerMotivosAjusteResponse">
+    <wsdl:part name="ListaMotivosAjuste" element="tns:ListaMotivosAjuste" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerParentescos_InputMessage" />
+  <wsdl:message name="ObtenerParentescosResponse">
+    <wsdl:part name="ListaParentescos" element="tns:ListaParentescos" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTiposCuentaRequest">
+    <wsdl:part name="ConductoCobro" element="tns:ConductoCobro" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTiposCuentaResponse">
+    <wsdl:part name="ListaTiposCuenta" element="tns:ListaTiposCuenta" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerTiposBeneficiarioPreferente_InputMessage" />
+  <wsdl:message name="ObtenerTiposBeneficiarioPreferenteResponse">
+    <wsdl:part name="ListaTiposBeneficiarioPreferente" element="tns:ListaTiposBeneficiarioPreferente" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerInfoUbicacionRequest">
+    <wsdl:part name="CodigoPostal" element="tns:CodigoPostal" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerInfoUbicacionResponse">
+    <wsdl:part name="ListaInfoUbicaciones" element="tns:ListaInfoUbicaciones" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMunicipiosRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerMunicipiosRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMunicipiosResponse">
+    <wsdl:part name="ListaMunicipios" element="tns:ListaMunicipios" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerEstadoCivil_InputMessage" />
+  <wsdl:message name="ObtenerEstadoCivilResponse">
+    <wsdl:part name="ListaEstadosCiviles" element="tns:ListaEstadosCiviles" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerSexo_InputMessage" />
+  <wsdl:message name="ObtenerSexoResponse">
+    <wsdl:part name="ListaSexos" element="tns:ListaSexos" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerPaises_InputMessage" />
+  <wsdl:message name="ObtenerPaisesResponse">
+    <wsdl:part name="ListaPaises" element="tns:ListaPaises" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerNacionalidades_InputMessage" />
+  <wsdl:message name="ObtenerNacionalidadesResponse">
+    <wsdl:part name="ListaNacionalidades" element="tns:ListaNacionalidades" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerEstadosRequest">
+    <wsdl:part name="idPais" element="tns:idPais" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerEstadosResponse">
+    <wsdl:part name="ListaEstados" element="tns:ListaEstados" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerZonasRequest">
+    <wsdl:part name="idCiudad" element="tns:idCiudad" />
+    <wsdl:part name="idEstado" element="tns:idEstado" />
+    <wsdl:part name="idTipoVehiculo" element="tns:idTipoVehiculo" />
+    <wsdl:part name="usuarioLogueado" element="tns:usuarioLogueado" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerZonasResponse">
+    <wsdl:part name="ListaZonas" element="tns:ListaZonas" />
+  </wsdl:message>
+  <wsdl:message name="IntMessage">
+    <wsdl:part name="IntValue" element="tns:IntValue" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_TestUser_InputMessage" />
+  <wsdl:message name="TestUserResponse">
+    <wsdl:part name="User" element="tns:User" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTiposVehiculoRequest">
+    <wsdl:part name="usuario" element="tns:usuario" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerLugarCirculacionRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerLugarCirculacionRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerLugarCirculacionResponse">
+    <wsdl:part name="ListaLugaresCirculacion" element="tns:ListaLugaresCirculacion" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerProveedoresAsistencia_InputMessage" />
+  <wsdl:message name="ObtenerProveedoresAsistenciaResponse">
+    <wsdl:part name="ListaProveedoresAsistencia" element="tns:ListaProveedoresAsistencia" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDeduciblesRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerDeduciblesRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDeduciblesResponse">
+    <wsdl:part name="ListaDeducibles" element="tns:ListaDeducibles" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerFormasPago_InputMessage" />
+  <wsdl:message name="PublicServicesAutosContract_ObtenerCanalesVenta_InputMessage" />
+  <wsdl:message name="ObtenerCanalesVentaResponse">
+    <wsdl:part name="ListaCanalesVenta" element="tns:ListaCanalesVenta" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCoberturasRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerCoberturasRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCoberturasResponse">
+    <wsdl:part name="ListaCoberturas" element="tns:ListaCoberturas" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdateScriptsRequest">
+    <wsdl:part name="parameters" element="tns:GetUpdateScriptsRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdateScriptsResponse">
+    <wsdl:part name="parameters" element="tns:GetUpdateScriptsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStructChangeScriptsRequest">
+    <wsdl:part name="parameters" element="tns:GetStructChangeScriptsRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetStructChangeScriptsResponse">
+    <wsdl:part name="StructChangeInfoCollectionValue" element="tns:StructChangeInfoCollectionValue" />
+  </wsdl:message>
+  <wsdl:message name="GetDataRequest">
+    <wsdl:part name="parameters" element="tns:GetDataRequest" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_GetGroups_InputMessage" />
+  <wsdl:message name="GetGroupsResponse">
+    <wsdl:part name="GroupInfoCollection" element="tns:GroupInfoCollection" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserRequest">
+    <wsdl:part name="parameters" element="tns:RegisterUserRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetFileUpdateInfoRequest">
+    <wsdl:part name="parameters" element="tns:GetFileUpdateInfoRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetFileUpdateInfoResponse">
+    <wsdl:part name="FileUpdateInfoCollectionValue" element="tns:FileUpdateInfoCollectionValue" />
+  </wsdl:message>
+  <wsdl:message name="GetFileRequest">
+    <wsdl:part name="parameters" element="tns:GetFileRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCiudadesRequest">
+    <wsdl:part name="IdEstado" element="tns:IdEstado" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCiudadesResponse">
+    <wsdl:part name="ListaCiudades" element="tns:ListaCiudades" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerInformacionVehiculoRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerInformacionVehiculoRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerInformacionVehiculoResponse">
+    <wsdl:part name="DatosVehiculo" element="tns:DatosVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="CotizacionRequest">
+    <wsdl:part name="parameters" element="tns:CotizacionRequest" />
+  </wsdl:message>
+  <wsdl:message name="CotizacionResponse">
+    <wsdl:part name="parameters" element="tns:CotizacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerConducto_InputMessage" />
+  <wsdl:message name="PublicServicesAutosContract_ObtenerBancos_InputMessage" />
+  <wsdl:message name="ObtenerBancosResponse">
+    <wsdl:part name="ListaBancos" element="tns:ListaBancos" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerOcupaciones_InputMessage" />
+  <wsdl:message name="ObtenerOcupacionesResponse">
+    <wsdl:part name="ListaOcupaciones" element="tns:ListaOcupaciones" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ObtenerOcupacionesConductor_InputMessage" />
+  <wsdl:message name="ObtenerOcupacionesConductorResponse">
+    <wsdl:part name="ListaOcupacionesConductor" element="tns:ListaOcupacionesConductor" />
+  </wsdl:message>
+  <wsdl:message name="EmitirCotizDirectRequest">
+    <wsdl:part name="parameters" element="tns:EmitirCotizDirectRequest" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaEstatusCotizRequest">
+    <wsdl:part name="parameters" element="tns:ActualizaEstatusCotizRequest" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_ActualizaEstatusCotiz_OutputMessage" />
+  <wsdl:message name="SolicitarPolizaRequest">
+    <wsdl:part name="parameters" element="tns:SolicitarPolizaRequest" />
+  </wsdl:message>
+  <wsdl:message name="SolicitarPolizaResponse">
+    <wsdl:part name="InformacionSolicitudPoliza" element="tns:InformacionSolicitudPoliza" />
+  </wsdl:message>
+  <wsdl:message name="DatosEnvioCorreo">
+    <wsdl:part name="parameters" element="tns:DatosEnvioCorreo" />
+  </wsdl:message>
+  <wsdl:message name="EmitirCotizacionAgenteRequest">
+    <wsdl:part name="parameters" element="tns:EmitirCotizacionAgenteRequest" />
+  </wsdl:message>
+  <wsdl:message name="SolicitarPolizaAgenteRequest">
+    <wsdl:part name="parameters" element="tns:SolicitarPolizaAgenteRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPaquetesAgenteRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerPaquetesAgenteRequest" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_LimpiarCache_InputMessage">
+    <wsdl:part name="parameters" element="tns:LimpiarCache" />
+  </wsdl:message>
+  <wsdl:message name="PublicServicesAutosContract_LimpiarCache_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LimpiarCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPolizasRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerPolizasRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPolizaResumenResponse">
+    <wsdl:part name="parameters" element="tns:ObtenerPolizaResumenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRecibosResponse">
+    <wsdl:part name="parameters" element="tns:ObtenerRecibosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPaquetesExpressRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerPaquetesExpressRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPaquetesExpressBrokerRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerPaquetesExpressBrokerRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPaquetesExpressBrokerResponse">
+    <wsdl:part name="parameters" element="tns:ObtenerPaquetesExpressBrokerResponse" />
+  </wsdl:message>
+  <wsdl:message name="PagarEmitirCotizacionBrokerRequest">
+    <wsdl:part name="parameters" element="tns:PagarEmitirCotizacionRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPaquetesMixtoRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerPaquetesMixtoRequest" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPaquetesMixtoRespose">
+    <wsdl:part name="parameters" element="tns:ObtenerPaquetesMixtoRespose" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPaquetesExpressPorNegocioRequest">
+    <wsdl:part name="parameters" element="tns:ObtenerPaquetesExpressPorNegocioRequest" />
+  </wsdl:message>
+  <wsdl:portType name="PublicServicesAutosContract">
+    <wsdl:operation name="ObtenerMultiPolizaSinRecibosPDF">
+      <wsdl:input wsaw:Action="ObtenerMulitPolizaSinRecibosPDF" name="MultiPolizaAImprimirRequest" message="tns:MultiPolizaAImprimirRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerMultiPolizaSinRecibosPDFResponse" name="ByteArrayMessage" message="tns:ByteArrayMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposSumaAsegurada">
+      <wsdl:input wsaw:Action="ObtenerTiposSumaAsegurada" message="tns:PublicServicesAutosContract_ObtenerTiposSumaAsegurada_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerTiposSumaAseguradaResponse" name="ObtenerTiposSumaAseguradaResponse" message="tns:ObtenerTiposSumaAseguradaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposSumaAseguradaFR">
+      <wsdl:input wsaw:Action="ObtenerTiposSumaAseguradaFR" name="CaracteristicasVehiculoFRMessage" message="tns:CaracteristicasVehiculoFRMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerTiposSumaAseguradaFRResponse" name="ObtenerTiposSumaAseguradaResponse" message="tns:ObtenerTiposSumaAseguradaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSumaAseguradaFronterizosRegularizados">
+      <wsdl:input wsaw:Action="ObtenerSumaAseguradaFronterizosRegularizados" name="ObtenerSumaAseguradaFRRequest" message="tns:ObtenerSumaAseguradaFRRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerSumaAseguradaFronterizosRegularizadosResponse" name="ObtenerSumaAseguradaFRResponse" message="tns:ObtenerSumaAseguradaFRResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFactoresMultianualesOficina">
+      <wsdl:input wsaw:Action="ObtenerFactoresMultianualesOficina" name="ObtenerFactoresMultianualesOficinaRequest" message="tns:ObtenerFactoresMultianualesOficinaRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerFactoresMultianualesOficinaResponse" name="ObtenerFactoresMultianualesOficinaResponse" message="tns:ObtenerFactoresMultianualesOficinaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposSumaAseguradaPorNegocio">
+      <wsdl:input wsaw:Action="ObtenerTiposSumaAseguradaPorNegocio" name="DatosNegocioRequest" message="tns:DatosNegocioRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerTiposSumaAseguradaPorNegocioResponse" name="ObtenerTiposSumaAseguradaResponse" message="tns:ObtenerTiposSumaAseguradaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFormasPagoPorNegocio">
+      <wsdl:input wsaw:Action="ObtenerFormasPagoPorNegocio" name="DatosNegocioRequest" message="tns:DatosNegocioRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerFormasPagoPorNegocioResponse" name="ObtenerFormasPagoResponse" message="tns:ObtenerFormasPagoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsosVehiculoPorNegocio">
+      <wsdl:input wsaw:Action="ObtenerUsosVehiculoPorNegocio" name="DatosNegocioRequest" message="tns:DatosNegocioRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerUsosVehiculoPorNegocioResponse" name="ObtenerUsosVehiculoResponse" message="tns:ObtenerUsosVehiculoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerConductosCobroPorNegocio">
+      <wsdl:input wsaw:Action="ObtenerConductosCobroPorNegocio" name="DatosNegocioRequest" message="tns:DatosNegocioRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerConductosCobroPorNegocioResponse" name="ObtenerConductoResponse" message="tns:ObtenerConductoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposVehiculoPorNegocio">
+      <wsdl:input wsaw:Action="ObtenerTiposVehiculoPorNegocio" name="DatosNegocioRequest" message="tns:DatosNegocioRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerTiposVehiculoPorNegocioResponse" name="ObtenerTiposVehiculoResponse" message="tns:ObtenerTiposVehiculoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetesPorNegocio">
+      <wsdl:input wsaw:Action="ObtenerPaqutesPorNegocio" name="ObtenerPaquetesNegocioRequest" message="tns:ObtenerPaquetesNegocioRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPaquetesPorNegocioResponse" name="ObtenerPaquetesResponse" message="tns:ObtenerPaquetesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetesFronterizos">
+      <wsdl:input wsaw:Action="ObtenerPaquetesFronterizos" name="ObtenerPaquetesNegocioRequest" message="tns:ObtenerPaquetesNegocioRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPaquetesFronterizosResponse" name="ObtenerPaquetesResponse" message="tns:ObtenerPaquetesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirCotizacionPorNegocio">
+      <wsdl:input wsaw:Action="EmitirCotizacionPorNegocio" name="EmitirCotizacionRequest" message="tns:EmitirCotizacionRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirCotizacionPorNegocioResponse" name="EmitirCotizacionResponse" message="tns:EmitirCotizacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ImprimirPolizaPorNegocio">
+      <wsdl:input wsaw:Action="ImprimirPolizaPorNegocio" name="PolizaImprimirPorNegocioRequest" message="tns:PolizaImprimirPorNegocioRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ImprimirPolizaPorNegocioResponse" name="ByteArrayMessage" message="tns:ByteArrayMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetesPorVersionVehiculo">
+      <wsdl:input wsaw:Action="ObtenerPaquetesPorVersionVehiculo" name="PaquetesCoberturasPorVehiculoRequest" message="tns:PaquetesCoberturasPorVehiculoRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPaquetesPorVersionVehiculoResponse" name="PaquetesCoberturasPorVehiculoResponse" message="tns:PaquetesCoberturasPorVehiculoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndBeneficiarioPreferente">
+      <wsdl:input wsaw:Action="EmitirEndBeneficiarioPreferenteResponse" name="EmiEndBenPreferenteRequest" message="tns:EmiEndBenPreferenteRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirEndBeneficiarioPreferenteResponse" name="EmiEndResponse" message="tns:EmiEndResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndDatosVehiculo">
+      <wsdl:input wsaw:Action="EmitirEndDatosVehiculo" name="EmiEndDatosVehiculoRequest" message="tns:EmiEndDatosVehiculoRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirEndDatosVehiculoResponse" name="EmiEndResponse" message="tns:EmiEndResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndCondCobroATarjetaCreditoNegocio">
+      <wsdl:input wsaw:Action="EmitirEndCondCobroATarjetaCreditoNegocio" name="EmiEndCondCobroATarCredNegocioRequest" message="tns:EmiEndCondCobroATarCredNegocioRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirEndCondCobroATarjetaCreditoNegocioResponse" name="EmiEndNegocioResponse" message="tns:EmiEndNegocioResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndCondCobroATarjetaCredito">
+      <wsdl:input wsaw:Action="EmitirEndCondCobroATarjetaCredito" name="EmiEndCondCobroATarCredRequest" message="tns:EmiEndCondCobroATarCredRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirEndCondCobroATarjetaCreditoResponse" name="EmiEndResponse" message="tns:EmiEndResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndCondCobroACuentaCheques">
+      <wsdl:input wsaw:Action="EmitirEndCondCobroACuentaCheques" name="EmiEndCondCobroACtaCheqRequest" message="tns:EmiEndCondCobroACtaCheqRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirEndCondCobroACuentaChequesResponse" name="EmiEndResponse" message="tns:EmiEndResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndCondCobroAEfectivo">
+      <wsdl:input wsaw:Action="EmitirEndCondCobroAEfectivo" name="EmiEndCondCobroAEfecRequest" message="tns:EmiEndCondCobroAEfecRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirEndCondCobroAEfectivoResponse" name="EmiEndResponse" message="tns:EmiEndResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndCondCobroACuentaChequesNegocio">
+      <wsdl:input wsaw:Action="EmitirEndCondCobroACuentaChequesNegocio" name="EmiEndCondCobroACtaCheqNegocioRequest" message="tns:EmiEndCondCobroACtaCheqNegocioRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirEndCondCobroACuentaChequesNegocioResponse" name="EmiEndNegocioResponse" message="tns:EmiEndNegocioResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndDatosContratanteFisica">
+      <wsdl:input wsaw:Action="EmitirEndDatosContratanteFisica" name="EmiEndDatosCtePFRequest" message="tns:EmiEndDatosCtePFRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirEndDatosContratanteFisicaResponse" name="EmiEndResponse" message="tns:EmiEndResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndDatosContratanteMoral">
+      <wsdl:input wsaw:Action="EmitirEndDatosContratanteMoral" name="EmiEndDatosCtePMRequest" message="tns:EmiEndDatosCtePMRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirEndDatosContratanteMoralResponse" name="EmiEndResponse" message="tns:EmiEndResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ImprimirEndoso">
+      <wsdl:input wsaw:Action="ImprimirEndoso" name="ImprimirEndosoRequest" message="tns:ImprimirEndosoRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ImprimirEndosoResponse" name="ImprimirEndosoResponse" message="tns:ImprimirEndosoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPolizaPDFEnd">
+      <wsdl:input wsaw:Action="ObtenerPolizaPDFEnd" name="PolizaImprimirEndosoRequest" message="tns:PolizaImprimirEndosoRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPolizaPDFEndResponse" name="ByteArrayMessage" message="tns:ByteArrayMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetesPorVehiculoPaquete">
+      <wsdl:input wsaw:Action="ObtenerPaquetesPorVehiculoPaquete" name="PaquetesCoberturasPorPaqueteRequest" message="tns:PaquetesCoberturasPorPaqueteRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPaquetesPorVehiculoPaqueteResponse" name="PaquetesCoberturasPorPaqueteResponse" message="tns:PaquetesCoberturasPorPaqueteResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndCancelProrrata">
+      <wsdl:input wsaw:Action="EmitirEndCancelProrrata" name="EmiEndCancelProrrataRequest" message="tns:EmiEndCancelProrrataRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirEndCancelProrrataResponse" name="EmiEndResponse" message="tns:EmiEndResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CargaListaMotivoCancelaciones">
+      <wsdl:input wsaw:Action="CargaListaMotivoCancelaciones" message="tns:PublicServicesAutosContract_CargaListaMotivoCancelaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/CargaListaMotivoCancelacionesResponse" message="tns:PublicServicesAutosContract_CargaListaMotivoCancelaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPolizaReciboYFormatosPago">
+      <wsdl:input wsaw:Action="ObtenerPolizaReciboYFormatosPago" name="PolizaAImprimir" message="tns:PolizaAImprimir" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPolizaReciboYFormatosPagoResponse" name="ByteArrayMessage" message="tns:ByteArrayMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRecibosDesglosados">
+      <wsdl:input wsaw:Action="ObtenerRecibosDesglosados" name="ObtenerRecibosDesglosadosRequest" message="tns:ObtenerRecibosDesglosadosRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerRecibosDesglosadosResponse" name="ObtenerRecibosDesglosadosResponse" message="tns:ObtenerRecibosDesglosadosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="PagarEmitirCotizacion">
+      <wsdl:input wsaw:Action="PagarEmitirCotizacion" name="EmitirCotizacionRequest" message="tns:EmitirCotizacionRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/PagarEmitirCotizacionResponse" name="PagarEmitirCotizacionBrokerResponse" message="tns:PagarEmitirCotizacionBrokerResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCaracteristicasVehiculo">
+      <wsdl:input wsaw:Action="ObtenerCaracteristicasVehiculo" message="tns:PublicServicesAutosContract_ObtenerCaracteristicasVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerCaracteristicasVehiculoResponse" message="tns:PublicServicesAutosContract_ObtenerCaracteristicasVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTarjetaValida">
+      <wsdl:input wsaw:Action="ObtenerTarjetaValida" name="ValidarTarjetaRequest" message="tns:ValidarTarjetaRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerTarjetaValidaResponse" name="ValidarTarjetaResponse" message="tns:ValidarTarjetaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCotizacion">
+      <wsdl:input wsaw:Action="ObtenerCotizacion" name="CargarCotizacionRequest" message="tns:CargarCotizacionRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerCotizacionResponse" name="CargarCotizacionResponse" message="tns:CargarCotizacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInformacionClienteVehiculoScotia">
+      <wsdl:input wsaw:Action="ObtenerInformacionClienteVehiculoScotia" name="InformacionClienteVehiculoScotiaRequest" message="tns:InformacionClienteVehiculoScotiaRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerInformacionClienteVehiculoScotiaResponse" name="InformacionClienteVehiculoScotiaResponse" message="tns:InformacionClienteVehiculoScotiaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarNumeroDeSeriePorUsuario">
+      <wsdl:input wsaw:Action="ValidarNumeroDeSeriePorUsuario" message="tns:PublicServicesAutosContract_ValidarNumeroDeSeriePorUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ValidarNumeroDeSeriePorUsuarioResponse" message="tns:PublicServicesAutosContract_ValidarNumeroDeSeriePorUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarNumeroDeSerie">
+      <wsdl:input wsaw:Action="ValidarNumeroDeSerie" message="tns:PublicServicesAutosContract_ValidarNumeroDeSerie_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ValidarNumeroDeSerieResponse" message="tns:PublicServicesAutosContract_ValidarNumeroDeSerie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InformacionRecibosScotiabankBL">
+      <wsdl:input wsaw:Action="InformacionRecibosScotiabankBL" name="InformacionRecibosScotiaRequest" message="tns:InformacionRecibosScotiaRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/InformacionRecibosScotiabankBLResponse" name="InformacionRecibosScotiaResponse" message="tns:InformacionRecibosScotiaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ConexionKBB">
+      <wsdl:input wsaw:Action="ConexionKBB" message="tns:PublicServicesAutosContract_ConexionKBB_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ConexionKBBResponse" message="tns:PublicServicesAutosContract_ConexionKBB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVehiculos">
+      <wsdl:input wsaw:Action="ObtenerVehiculos" name="CatVehiculosRequest" message="tns:CatVehiculosRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerVehiculosResponse" name="ByteArrayMessage" message="tns:ByteArrayMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsos">
+      <wsdl:input wsaw:Action="ObtenerUsos" name="ObtenerUsosRequest" message="tns:ObtenerUsosRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerUsosResponse" name="ObtenerUsosVehiculoResponse" message="tns:ObtenerUsosVehiculoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndCancelProrrataPorNegocio">
+      <wsdl:input wsaw:Action="EmitirEndCancelProrrataPorNegocio" name="EmiEndCancelProrrataPorNegocioRequest" message="tns:EmiEndCancelProrrataPorNegocioRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirEndCancelProrrataPorNegocioResponse" name="EmiEndNegocioResponse" message="tns:EmiEndNegocioResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCaracteristicasVehiculoFronterizo">
+      <wsdl:input wsaw:Action="ObtenerCaracteristicasVehiculoFronterizo" name="CaracteristicasVehiculoFronterizoRequest" message="tns:CaracteristicasVehiculoFronterizoRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerCaracteristicasVehiculoFronterizoResponse" name="CaracteristicasVehiculoFronterizoResponse" message="tns:CaracteristicasVehiculoFronterizoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerClaveVehiculo">
+      <wsdl:input wsaw:Action="ObtenerClaveVehiculo" message="tns:PublicServicesAutosContract_ObtenerClaveVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerClaveVehiculoResponse" message="tns:PublicServicesAutosContract_ObtenerClaveVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetesPermitidos">
+      <wsdl:input wsaw:Action="ObtenerPaquetesPermitidos" message="tns:PublicServicesAutosContract_ObtenerPaquetesPermitidos_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPaquetesPermitidosResponse" message="tns:PublicServicesAutosContract_ObtenerPaquetesPermitidos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSumaAsegurada">
+      <wsdl:input wsaw:Action="ObtenerSumaAsegurada" name="ObtenerSumaAseguradaRequest" message="tns:ObtenerSumaAseguradaRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerSumaAseguradaResponse" name="ObtenerSumaAseguradaResponse" message="tns:ObtenerSumaAseguradaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <wsdl:input wsaw:Action="ValidarUsuario" message="tns:PublicServicesAutosContract_ValidarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ValidarUsuarioResponse" message="tns:PublicServicesAutosContract_ValidarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImprimirCotizacion">
+      <wsdl:input wsaw:Action="ImprimirCotizacion" name="GuardarCotizacionRequest" message="tns:GuardarCotizacionRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ImprimirCotizacionResponse" name="ImprimirCotizacionResponse" message="tns:ImprimirCotizacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="PrimaNoDevengadaCancelacion">
+      <wsdl:input wsaw:Action="PrimaNoDevengadaCancelacion" name="EmiEndCancelProrrataRequest" message="tns:EmiEndCancelProrrataRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/PrimaNoDevengadaCancelacionResponse" name="PrimaNoDevengadaResponse" message="tns:PrimaNoDevengadaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposSumaAseguradasPermitidas">
+      <wsdl:input wsaw:Action="ObtenerTiposSumaAseguradasPermitidas" name="ObtenerTiposSumaAseguradaRequest" message="tns:ObtenerTiposSumaAseguradaRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerTiposSumaAseguradasPermitidasResponse" name="ObtenerTiposSumaAseguradaResponse" message="tns:ObtenerTiposSumaAseguradaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCodigoDeConfirmacion">
+      <wsdl:input wsaw:Action="ValidarCodigoDeConfirmacion" name="ValidarCodigoDeConfirmacionRequest" message="tns:ValidarCodigoDeConfirmacionRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ValidarCodigoDeConfirmacionResponse" name="ValidarCodigoDeConfirmacionResponse" message="tns:ValidarCodigoDeConfirmacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirMultiCotizacionMesAdicional">
+      <wsdl:input wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirMultiCotizacionMesAdicional" name="EmitirMultiCotizacionRequest" message="tns:EmitirMultiCotizacionRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirMultiCotizacionMesAdicionalResponse" name="EmitirMultiCotizacionResponse" message="tns:EmitirMultiCotizacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCotizacionFronterizos">
+      <wsdl:input wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerCotizacionFronterizos" name="DatosCotizacionFronterizosRequest" message="tns:DatosCotizacionFronterizosRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerCotizacionFronterizosResponse" name="DatosCotizacionFronterizosResponse" message="tns:DatosCotizacionFronterizosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirMultiCotizacionRemanente">
+      <wsdl:input wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirMultiCotizacionRemanente" name="EmitirRemanenteRequest" message="tns:EmitirRemanenteRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirMultiCotizacionRemanenteResponse" name="EmitirMultiCotizacionResponse" message="tns:EmitirMultiCotizacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Statuseuser">
+      <wsdl:input wsaw:Action="ValidarEstatusUsuario" message="tns:PublicServicesAutosContract_Statuseuser_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/StatuseuserResponse" message="tns:PublicServicesAutosContract_Statuseuser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCotizacionExpress">
+      <wsdl:input wsaw:Action="GuardarCotizacionExpress" name="GuardarCotizacionExpressRequest" message="tns:GuardarCotizacionExpressRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/GuardarCotizacionExpressResponse" name="GuardarCotizacionResponse" message="tns:GuardarCotizacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="PagarReciboPendienteEnLinea">
+      <wsdl:input wsaw:Action="PagarReciboPendienteEnLinea" name="DatosReciboPagoEnLinea" message="tns:DatosReciboPagoEnLinea" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/PagarReciboPendienteEnLineaResponse" name="ParametrosRespuestaPagoRecibo" message="tns:ParametrosRespuestaPagoRecibo" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosCalculoTarificacion">
+      <wsdl:input wsaw:Action="ObtenerDatosCalculoTarificacion" message="tns:PublicServicesAutosContract_ObtenerDatosCalculoTarificacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerDatosCalculoTarificacionResponse" message="tns:PublicServicesAutosContract_ObtenerDatosCalculoTarificacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificarVehiculoxagenteAfasa">
+      <wsdl:input wsaw:Action="VerificarVehiculoxagenteAfasa" message="tns:PublicServicesAutosContract_VerificarVehiculoxagenteAfasa_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/VerificarVehiculoxagenteAfasaResponse" message="tns:PublicServicesAutosContract_VerificarVehiculoxagenteAfasa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IniciarViaje">
+      <wsdl:input wsaw:Action="IniciarViaje" name="IniciarViajeRequest" message="tns:IniciarViajeRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/IniciarViajeResponse" name="IniciarViajeResponse" message="tns:IniciarViajeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="FinalizarViaje">
+      <wsdl:input wsaw:Action="FinalizarViaje" name="FinalizarViajeRequest" message="tns:FinalizarViajeRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/FinalizarViajeResponse" name="FinalizarViajeResponse" message="tns:FinalizarViajeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerViajesCoberturaDinamica">
+      <wsdl:input wsaw:Action="ObtenerViajesCoberturaDinamica" name="ObtenerViajesCoberturaDinamicaRequest" message="tns:ObtenerViajesCoberturaDinamicaRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerViajesCoberturaDinamicaResponse" name="ObtenerViajesCoberturaDinamicaResponse" message="tns:ObtenerViajesCoberturaDinamicaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="PagarViajeAcumuladoCuandoEsSiniestro">
+      <wsdl:input wsaw:Action="PagarViajeAcumuladoCuandoEsSiniestro" name="PagoViajeAcumuladosRequest" message="tns:PagoViajeAcumuladosRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/PagarViajeAcumuladoCuandoEsSiniestroResponse" name="PagoViajeAcumuladoResponse" message="tns:PagoViajeAcumuladoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerViajesCoberturaDinamicaPolizas">
+      <wsdl:input wsaw:Action="ObtenerViajesCoberturaDinamicaPolizas" name="ObtenerViajesCoberturaDinamicaPolizasRequest" message="tns:ObtenerViajesCoberturaDinamicaPolizasRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerViajesCoberturaDinamicaPolizasResponse" name="ObtenerViajesCoberturaDinamicaPolizasResponse" message="tns:ObtenerViajesCoberturaDinamicaPolizasResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="PagarRecibo">
+      <wsdl:input wsaw:Action="PagarRecibo" name="PagandoReciboRequest" message="tns:PagandoReciboRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/PagarReciboResponse" name="ParametrosRespuestaPagoRecibo" message="tns:ParametrosRespuestaPagoRecibo" />
+    </wsdl:operation>
+    <wsdl:operation name="PagarViaje">
+      <wsdl:input wsaw:Action="PagarViaje" name="PagandoViajeRequest" message="tns:PagandoViajeRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/PagarViajeResponse" name="ParametrosRespuestaPagoRecibo" message="tns:ParametrosRespuestaPagoRecibo" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFactura">
+      <wsdl:input wsaw:Action="ObtenerFactura" name="ObtenerFacturaRequest" message="tns:ObtenerFacturaRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerFacturaResponse" name="ByteArrayMessage" message="tns:ByteArrayMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFacturaXml">
+      <wsdl:input wsaw:Action="ObtenerFacturaXml" name="ObtenerXmlRequest" message="tns:ObtenerXmlRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerFacturaXmlResponse" name="ByteArrayMessage" message="tns:ByteArrayMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMultiplesFacturas">
+      <wsdl:input wsaw:Action="ObtenerMultiplesFacturasRequest" name="ObtenerMultiplesFacturasRequest" message="tns:ObtenerMultiplesFacturasRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerMultiplesFacturasResponse" name="ByteArrayMessage" message="tns:ByteArrayMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarRelacionGrupoUsuario">
+      <wsdl:input wsaw:Action="ValidarRelacionGrupoUsuario" message="tns:PublicServicesAutosContract_ValidarRelacionGrupoUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ValidarRelacionGrupoUsuarioResponse" message="tns:PublicServicesAutosContract_ValidarRelacionGrupoUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarAsignaDefaultDatosCliente">
+      <wsdl:input wsaw:Action="ValidarAsignaDefaultDatosCliente" message="tns:PublicServicesAutosContract_ValidarAsignaDefaultDatosCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ValidarAsignaDefaultDatosClienteResponse" message="tns:PublicServicesAutosContract_ValidarAsignaDefaultDatosCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCatalogoClausulasAdatpatcionesEquipo">
+      <wsdl:input wsaw:Action="ObtenerCatalogoClausulasAdatpatcionesEquipo" name="CatalogoDetallesRequest" message="tns:CatalogoDetallesRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerCatalogoClausulasAdatpatcionesEquipoResponse" name="CatalogoDetallesResponse" message="tns:CatalogoDetallesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCotizGuardada">
+      <wsdl:input wsaw:Action="RecuperarCotizGuardada" name="RecuperarCotizGuardadaExpressRequest" message="tns:RecuperarCotizGuardadaExpressRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/RecuperarCotizGuardadaResponse" name="RecuperarCotizacionGuardadaResponse" message="tns:RecuperarCotizacionGuardadaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmiteCotizacionGuardada">
+      <wsdl:input wsaw:Action="EmiteCotizacionGuardada" name="EmiteCotGuardadaRequest" message="tns:EmiteCotGuardadaRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmiteCotizacionGuardadaResponse" name="EmiteCotGuardadaResponse" message="tns:EmiteCotGuardadaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoVehiculo">
+      <wsdl:input wsaw:Action="ObtenerTipoVehiculo" name="ObtenerTipoVehiculoRequest" message="tns:ObtenerTipoVehiculoRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerTipoVehiculoResponse" name="ObtenerTipoVehiculoResponse" message="tns:ObtenerTipoVehiculoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMultiConfiguracionPaquetesExpress">
+      <wsdl:input wsaw:Action="ObtenerMultiConfiguracionPaquetesExpress" name="ObtenerMultiConfiguracionPaquetesExpressRequest" message="tns:ObtenerMultiConfiguracionPaquetesExpressRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerMultiConfiguracionPaquetesExpressResponse" name="ObtenerPaquetesExpressRespose" message="tns:ObtenerPaquetesExpressRespose" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirMultiConfiguracionPaquetesExpress">
+      <wsdl:input wsaw:Action="EmitirMultiConfiguracionPaquetesExpress" name="EmitirMultiCotizacionConfiguracionRequest" message="tns:EmitirMultiCotizacionConfiguracionRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirMultiConfiguracionPaquetesExpressResponse" name="EmitirMultiCotizacionResponse" message="tns:EmitirMultiCotizacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMarcas">
+      <wsdl:input wsaw:Action="ObtenerMarcas" name="ObtenerMarcasRequest" message="tns:ObtenerMarcasRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerMarcasResponse" name="ObtenerMarcasResponse" message="tns:ObtenerMarcasResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAgente">
+      <wsdl:input wsaw:Action="ObtenerAgente" message="tns:PublicServicesAutosContract_ObtenerAgente_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerAgenteResponse" message="tns:PublicServicesAutosContract_ObtenerAgente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposAjuste">
+      <wsdl:input wsaw:Action="ObtenerTiposAjuste" message="tns:PublicServicesAutosContract_ObtenerTiposAjuste_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerTiposAjusteResponse" name="ObtenerTiposAjusteResponse" message="tns:ObtenerTiposAjusteResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetes">
+      <wsdl:input wsaw:Action="ObtenerPaquetes" name="ObtenerPaquetesRequest" message="tns:ObtenerPaquetesRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPaquetesResponse" name="ObtenerPaquetesResponse" message="tns:ObtenerPaquetesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerServicios">
+      <wsdl:input wsaw:Action="ObtenerServicios" message="tns:PublicServicesAutosContract_ObtenerServicios_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerServiciosResponse" name="ObtenerServiciosResponse" message="tns:ObtenerServiciosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipos">
+      <wsdl:input wsaw:Action="ObtenerTipos" name="ObtenerTiposRequest" message="tns:ObtenerTiposRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerTiposResponse" name="ObtenerTiposResponse" message="tns:ObtenerTiposResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposFiltrados">
+      <wsdl:input wsaw:Action="ObtenerTiposFiltrados" name="ObtenerTiposFiltradosRequest" message="tns:ObtenerTiposFiltradosRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerTiposFiltradosResponse" name="ObtenerTiposResponse" message="tns:ObtenerTiposResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVersiones">
+      <wsdl:input wsaw:Action="ObtenerVersiones" name="ObtenerVersionesRequest" message="tns:ObtenerVersionesRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerVersionesResponse" name="ObtenerVersionesResponse" message="tns:ObtenerVersionesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVehiculoVersiones">
+      <wsdl:input wsaw:Action="ObtenerVehiculoVersionesResponse" name="ObtenerVehiculoVersionesRequest" message="tns:ObtenerVehiculoVersionesRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerVehiculoVersionesResponse" name="ObtenerVehiculoVersionesResponse" message="tns:ObtenerVehiculoVersionesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerModelos">
+      <wsdl:input wsaw:Action="ObtenerModelos" name="ObtenerModelosRequest" message="tns:ObtenerModelosRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerModelosResponse" name="ObtenerModelosResponse" message="tns:ObtenerModelosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTransmisiones">
+      <wsdl:input wsaw:Action="ObtenerTransmisiones" name="ObtenerTransmisionesRequest" message="tns:ObtenerTransmisionesRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerTransmisionesResponse" name="ObtenerTransmisionesResponse" message="tns:ObtenerTransmisionesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTonelajes">
+      <wsdl:input wsaw:Action="ObtenerTonelajes" name="ObtenerTonelajesRequest" message="tns:ObtenerTonelajesRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerTonelajesResponse" name="ObtenerTonelajesResponse" message="tns:ObtenerTonelajesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRiesgosCarga">
+      <wsdl:input wsaw:Action="ObtenerRiesgosCarga" message="tns:PublicServicesAutosContract_ObtenerRiesgosCarga_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerRiesgosCargaResponse" name="ObtenerRiesgosCargaResponse" message="tns:ObtenerRiesgosCargaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRiesgosCargaPorNegocio">
+      <wsdl:input wsaw:Action="ObtenerRiesgosCargaPorNegocio" name="StringMessage" message="tns:StringMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerRiesgosCargaPorNegocioResponse" name="ObtenerRiesgosCargaResponse" message="tns:ObtenerRiesgosCargaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRemolques">
+      <wsdl:input wsaw:Action="ObtenerRemolques" message="tns:PublicServicesAutosContract_ObtenerRemolques_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerRemolquesResponse" name="ObtenerRemolquesResponse" message="tns:ObtenerRemolquesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDescripciones">
+      <wsdl:input wsaw:Action="ObtenerDescripciones" name="ObtenerDescripcionesRequest" message="tns:ObtenerDescripcionesRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerDescripcionesResponse" name="ObtenerDescripcionesResponse" message="tns:ObtenerDescripcionesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRiesgos">
+      <wsdl:input wsaw:Action="ObtenerRiesgos" name="ObtenerRiesgosRequest" message="tns:ObtenerRiesgosRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerRiesgosResponse" name="ObtenerRiesgosResponse" message="tns:ObtenerRiesgosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMotivosAjuste">
+      <wsdl:input wsaw:Action="ObtenerMotivosAjuste" message="tns:PublicServicesAutosContract_ObtenerMotivosAjuste_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerMotivosAjusteResponse" name="ObtenerMotivosAjusteResponse" message="tns:ObtenerMotivosAjusteResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerParentescos">
+      <wsdl:input wsaw:Action="ObtenerParentescos" message="tns:PublicServicesAutosContract_ObtenerParentescos_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerParentescosResponse" name="ObtenerParentescosResponse" message="tns:ObtenerParentescosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposCuenta">
+      <wsdl:input wsaw:Action="ObtenerTiposCuenta" name="ObtenerTiposCuentaRequest" message="tns:ObtenerTiposCuentaRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerTiposCuentaResponse" name="ObtenerTiposCuentaResponse" message="tns:ObtenerTiposCuentaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposBeneficiarioPreferente">
+      <wsdl:input wsaw:Action="ObtenerTiposBeneficiarioPreferente" message="tns:PublicServicesAutosContract_ObtenerTiposBeneficiarioPreferente_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerTiposBeneficiarioPreferenteResponse" name="ObtenerTiposBeneficiarioPreferenteResponse" message="tns:ObtenerTiposBeneficiarioPreferenteResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoUbicacion">
+      <wsdl:input wsaw:Action="ObtenerInfoUbicacion" name="ObtenerInfoUbicacionRequest" message="tns:ObtenerInfoUbicacionRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerInfoUbicacionResponse" name="ObtenerInfoUbicacionResponse" message="tns:ObtenerInfoUbicacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMunicipios">
+      <wsdl:input wsaw:Action="ObtenerMunicipios" name="ObtenerMunicipiosRequest" message="tns:ObtenerMunicipiosRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerMunicipiosResponse" name="ObtenerMunicipiosResponse" message="tns:ObtenerMunicipiosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstadoCivil">
+      <wsdl:input wsaw:Action="ObtenerEstadoCivil" message="tns:PublicServicesAutosContract_ObtenerEstadoCivil_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerEstadoCivilResponse" name="ObtenerEstadoCivilResponse" message="tns:ObtenerEstadoCivilResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSexo">
+      <wsdl:input wsaw:Action="ObtenerSexo" message="tns:PublicServicesAutosContract_ObtenerSexo_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerSexoResponse" name="ObtenerSexoResponse" message="tns:ObtenerSexoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaises">
+      <wsdl:input wsaw:Action="ObtenerPaises" message="tns:PublicServicesAutosContract_ObtenerPaises_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPaisesResponse" name="ObtenerPaisesResponse" message="tns:ObtenerPaisesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNacionalidades">
+      <wsdl:input wsaw:Action="ObtenerNacionalidades" message="tns:PublicServicesAutosContract_ObtenerNacionalidades_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerNacionalidadesResponse" name="ObtenerNacionalidadesResponse" message="tns:ObtenerNacionalidadesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstados">
+      <wsdl:input wsaw:Action="ObtenerEstados" name="ObtenerEstadosRequest" message="tns:ObtenerEstadosRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerEstadosResponse" name="ObtenerEstadosResponse" message="tns:ObtenerEstadosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerZonas">
+      <wsdl:input wsaw:Action="ObtenerZonas" name="ObtenerZonasRequest" message="tns:ObtenerZonasRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerZonasResponse" name="ObtenerZonasResponse" message="tns:ObtenerZonasResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerZona">
+      <wsdl:input wsaw:Action="ObtenerZona" name="ObtenerZonasRequest" message="tns:ObtenerZonasRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerZonaResponse" name="IntMessage" message="tns:IntMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestUser">
+      <wsdl:input wsaw:Action="TestUser" message="tns:PublicServicesAutosContract_TestUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/TestUserResponse" name="TestUserResponse" message="tns:TestUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposVehiculo">
+      <wsdl:input wsaw:Action="ObtenerTiposVehiculo" name="ObtenerTiposVehiculoRequest" message="tns:ObtenerTiposVehiculoRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerTiposVehiculoResponse" name="ObtenerTiposVehiculoResponse" message="tns:ObtenerTiposVehiculoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerLugarCirculacion">
+      <wsdl:input wsaw:Action="ObtenerLugarCirculacion" name="ObtenerLugarCirculacionRequest" message="tns:ObtenerLugarCirculacionRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerLugarCirculacionResponse" name="ObtenerLugarCirculacionResponse" message="tns:ObtenerLugarCirculacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProveedoresAsistencia">
+      <wsdl:input wsaw:Action="ObtenerProveedoresAsistencia" message="tns:PublicServicesAutosContract_ObtenerProveedoresAsistencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerProveedoresAsistenciaResponse" name="ObtenerProveedoresAsistenciaResponse" message="tns:ObtenerProveedoresAsistenciaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDeducibles">
+      <wsdl:input wsaw:Action="ObtenerDeducibles" name="ObtenerDeduciblesRequest" message="tns:ObtenerDeduciblesRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerDeduciblesResponse" name="ObtenerDeduciblesResponse" message="tns:ObtenerDeduciblesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFormasPago">
+      <wsdl:input wsaw:Action="ObtenerFormasPago" message="tns:PublicServicesAutosContract_ObtenerFormasPago_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerFormasPagoResponse" name="ObtenerFormasPagoResponse" message="tns:ObtenerFormasPagoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCanalesVenta">
+      <wsdl:input wsaw:Action="ObtenerCanalesVenta" message="tns:PublicServicesAutosContract_ObtenerCanalesVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerCanalesVentaResponse" name="ObtenerCanalesVentaResponse" message="tns:ObtenerCanalesVentaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCoberturas">
+      <wsdl:input wsaw:Action="ObtenerCoberturas" name="ObtenerCoberturasRequest" message="tns:ObtenerCoberturasRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerCoberturasResponse" name="ObtenerCoberturasResponse" message="tns:ObtenerCoberturasResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdateScripts">
+      <wsdl:input wsaw:Action="GetUpdateScripts" name="GetUpdateScriptsRequest" message="tns:GetUpdateScriptsRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/GetUpdateScriptsResponse" name="GetUpdateScriptsResponse" message="tns:GetUpdateScriptsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStructChangeScripts">
+      <wsdl:input wsaw:Action="GetStructChangeScripts" name="GetStructChangeScriptsRequest" message="tns:GetStructChangeScriptsRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/GetStructChangeScriptsResponse" name="GetStructChangeScriptsResponse" message="tns:GetStructChangeScriptsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="GetData" name="GetDataRequest" message="tns:GetDataRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/GetDataResponse" name="ByteArrayMessage" message="tns:ByteArrayMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <wsdl:input wsaw:Action="GetGroups" message="tns:PublicServicesAutosContract_GetGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/GetGroupsResponse" name="GetGroupsResponse" message="tns:GetGroupsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input wsaw:Action="RegisterUser" name="RegisterUserRequest" message="tns:RegisterUserRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/RegisterUserResponse" name="ByteArrayMessage" message="tns:ByteArrayMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileUpdateInfo">
+      <wsdl:input wsaw:Action="GetFileUpdateInfo" name="GetFileUpdateInfoRequest" message="tns:GetFileUpdateInfoRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/GetFileUpdateInfoResponse" name="GetFileUpdateInfoResponse" message="tns:GetFileUpdateInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <wsdl:input wsaw:Action="GetFile" name="GetFileRequest" message="tns:GetFileRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/GetFileResponse" name="ByteArrayMessage" message="tns:ByteArrayMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPolizaPDF">
+      <wsdl:input wsaw:Action="ObtenerPolizaPDF" name="PolizaAImprimir" message="tns:PolizaAImprimir" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPolizaPDFResponse" name="ByteArrayMessage" message="tns:ByteArrayMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerReciboPDF">
+      <wsdl:input wsaw:Action="ObtenerReciboPDF" name="PolizaAImprimir" message="tns:PolizaAImprimir" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerReciboPDFResponse" name="ByteArrayMessage" message="tns:ByteArrayMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPolizaYReciboPDF">
+      <wsdl:input wsaw:Action="ObtenerPolizaYReciboPDF" name="PolizaAImprimir" message="tns:PolizaAImprimir" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPolizaYReciboPDFResponse" name="ByteArrayMessage" message="tns:ByteArrayMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCiudades">
+      <wsdl:input wsaw:Action="ObtenerCiudades" name="ObtenerCiudadesRequest" message="tns:ObtenerCiudadesRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerCiudadesResponse" name="ObtenerCiudadesResponse" message="tns:ObtenerCiudadesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInformacionVehiculo">
+      <wsdl:input wsaw:Action="ObtenerInformacionVehiculo" name="ObtenerInformacionVehiculoRequest" message="tns:ObtenerInformacionVehiculoRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerInformacionVehiculoResponse" name="ObtenerInformacionVehiculoResponse" message="tns:ObtenerInformacionVehiculoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCotizacion">
+      <wsdl:input wsaw:Action="GuardarCotizacion" name="GuardarCotizacionRequest" message="tns:GuardarCotizacionRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/GuardarCotizacionResponse" name="GuardarCotizacionResponse" message="tns:GuardarCotizacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCotizacionPorNegocio">
+      <wsdl:input wsaw:Action="GuardarCotizacionPorNegocio" name="GuardarCotizacionRequest" message="tns:GuardarCotizacionRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/GuardarCotizacionPorNegocioResponse" name="GuardarCotizacionResponse" message="tns:GuardarCotizacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarCotizacionPorNegocio">
+      <wsdl:input wsaw:Action="CargarCotizacionPorNegocio" name="CotizacionRequest" message="tns:CotizacionRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/CargarCotizacionPorNegocioResponse" name="CotizacionResponse" message="tns:CotizacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerConducto">
+      <wsdl:input wsaw:Action="ObtenerConducto" message="tns:PublicServicesAutosContract_ObtenerConducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerConductoResponse" name="ObtenerConductoResponse" message="tns:ObtenerConductoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBancos">
+      <wsdl:input wsaw:Action="ObtenerBancos" message="tns:PublicServicesAutosContract_ObtenerBancos_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerBancosResponse" name="ObtenerBancosResponse" message="tns:ObtenerBancosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerOcupaciones">
+      <wsdl:input wsaw:Action="ObtenerOcupaciones" message="tns:PublicServicesAutosContract_ObtenerOcupaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerOcupacionesResponse" name="ObtenerOcupacionesResponse" message="tns:ObtenerOcupacionesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerOcupacionesConductor">
+      <wsdl:input wsaw:Action="ObtenerOcupacionesConductor" message="tns:PublicServicesAutosContract_ObtenerOcupacionesConductor_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerOcupacionesConductorResponse" name="ObtenerOcupacionesConductorResponse" message="tns:ObtenerOcupacionesConductorResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirCotizacion">
+      <wsdl:input wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirCotizacion" name="EmitirCotizacionRequest" message="tns:EmitirCotizacionRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirCotizacionResponse" name="EmitirCotizacionResponse" message="tns:EmitirCotizacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirMultiCotizacion">
+      <wsdl:input wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirMultiCotizacion" name="EmitirMultiCotizacionRequest" message="tns:EmitirMultiCotizacionRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirMultiCotizacionResponse" name="EmitirMultiCotizacionResponse" message="tns:EmitirMultiCotizacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirCotizDirec">
+      <wsdl:input wsaw:Action="EmitirCotizDirec" name="EmitirCotizDirectRequest" message="tns:EmitirCotizDirectRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirCotizDirecResponse" name="EmitirCotizacionResponse" message="tns:EmitirCotizacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirCotizDirecVirtual">
+      <wsdl:input wsaw:Action="EmitirCotizDirecVirtual" name="EmitirCotizDirectRequest" message="tns:EmitirCotizDirectRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirCotizDirecVirtualResponse" name="StringMessage" message="tns:StringMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaEstatusCotiz">
+      <wsdl:input wsaw:Action="ActualizaEstatusCotiz" name="ActualizaEstatusCotizRequest" message="tns:ActualizaEstatusCotizRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ActualizaEstatusCotizResponse" message="tns:PublicServicesAutosContract_ActualizaEstatusCotiz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarPoliza">
+      <wsdl:input wsaw:Action="SolicitarPoliza" name="SolicitarPolizaRequest" message="tns:SolicitarPolizaRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/SolicitarPolizaResponse" name="SolicitarPolizaResponse" message="tns:SolicitarPolizaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCotizacionCorreo">
+      <wsdl:input wsaw:Action="EnviarCotizacionCorreo" name="DatosEnvioCorreo" message="tns:DatosEnvioCorreo" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EnviarCotizacionCorreoResponse" name="IntMessage" message="tns:IntMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCotizacionCorreoSinGuardar">
+      <wsdl:input wsaw:Action="EnviarCotizacionCorreoSinGuardar" name="DatosEnvioCorreo" message="tns:DatosEnvioCorreo" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EnviarCotizacionCorreoSinGuardarResponse" name="IntMessage" message="tns:IntMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarPolizaCorreo">
+      <wsdl:input wsaw:Action="EnviarPolizaCorreo" name="DatosEnvioCorreo" message="tns:DatosEnvioCorreo" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EnviarPolizaCorreoResponse" name="IntMessage" message="tns:IntMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirCotizacionAgente">
+      <wsdl:input wsaw:Action="EmitirCotizacionAgente" name="EmitirCotizacionAgenteRequest" message="tns:EmitirCotizacionAgenteRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirCotizacionAgenteResponse" name="EmitirCotizacionResponse" message="tns:EmitirCotizacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaPolizaAgente">
+      <wsdl:input wsaw:Action="SolicitaPolizaAgente" name="SolicitarPolizaAgenteRequest" message="tns:SolicitarPolizaAgenteRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/SolicitaPolizaAgenteResponse" name="SolicitarPolizaResponse" message="tns:SolicitarPolizaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetesAgente">
+      <wsdl:input wsaw:Action="ObtenerPaquetesAgente" name="ObtenerPaquetesAgenteRequest" message="tns:ObtenerPaquetesAgenteRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPaquetesAgenteResponse" name="ObtenerPaquetesResponse" message="tns:ObtenerPaquetesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="LimpiarCache">
+      <wsdl:input wsaw:Action="LimpiarCache" message="tns:PublicServicesAutosContract_LimpiarCache_InputMessage" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/LimpiarCacheResponse" message="tns:PublicServicesAutosContract_LimpiarCache_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPolizaResumen">
+      <wsdl:input wsaw:Action="ObtenerPolizaResumen" name="ObtenerPolizasRequest" message="tns:ObtenerPolizasRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPolizaResumenResponse" name="ObtenerPolizaResumenResponse" message="tns:ObtenerPolizaResumenResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPolizaRecibos">
+      <wsdl:input wsaw:Action="ObtenerPolizaRecibos" name="ObtenerPolizasRequest" message="tns:ObtenerPolizasRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPolizaRecibosResponse" name="ObtenerRecibosResponse" message="tns:ObtenerRecibosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetesExpress">
+      <wsdl:input wsaw:Action="ObtenerPaquetesExpress" name="ObtenerPaquetesExpressRequest" message="tns:ObtenerPaquetesExpressRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPaquetesExpressResponse" name="ObtenerPaquetesExpressRespose" message="tns:ObtenerPaquetesExpressRespose" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetesExpressBroker">
+      <wsdl:input wsaw:Action="ObtenerPaquetesExpressBroker" name="ObtenerPaquetesExpressBrokerRequest" message="tns:ObtenerPaquetesExpressBrokerRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPaquetesExpressBrokerResponse" name="ObtenerPaquetesExpressBrokerResponse" message="tns:ObtenerPaquetesExpressBrokerResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="PagarEmitirCotizacionBroker">
+      <wsdl:input wsaw:Action="PagarEmitirCotizacionBroker" name="PagarEmitirCotizacionBrokerRequest" message="tns:PagarEmitirCotizacionBrokerRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/PagarEmitirCotizacionBrokerResponse" name="PagarEmitirCotizacionBrokerResponse" message="tns:PagarEmitirCotizacionBrokerResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMultiPaquetesMixto">
+      <wsdl:input wsaw:Action="ObtenerMultiPaquetesMixto" name="ObtenerPaquetesMixtoRequest" message="tns:ObtenerPaquetesMixtoRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerMultiPaquetesMixtoResponse" name="ObtenerPaquetesMixtoRespose" message="tns:ObtenerPaquetesMixtoRespose" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMultiPaquetesExpress">
+      <wsdl:input wsaw:Action="ObtenerMultiPaquetesExpress" name="ObtenerPaquetesExpressRequest" message="tns:ObtenerPaquetesExpressRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerMultiPaquetesExpressResponse" name="ObtenerPaquetesExpressRespose" message="tns:ObtenerPaquetesExpressRespose" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMultiPaquetesExpressPorNegocio">
+      <wsdl:input wsaw:Action="ObtenerMultiPaquetesExpressPorNegocio" name="ObtenerPaquetesExpressPorNegocioRequest" message="tns:ObtenerPaquetesExpressPorNegocioRequest" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerMultiPaquetesExpressPorNegocioResponse" name="ObtenerPaquetesExpressRespose" message="tns:ObtenerPaquetesExpressRespose" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPolizaSinRecibosPDF">
+      <wsdl:input wsaw:Action="ObtenerPolizaSinRecibosPDF" name="PolizaAImprimir" message="tns:PolizaAImprimir" />
+      <wsdl:output wsaw:Action="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerPolizaSinRecibosPDFResponse" name="ByteArrayMessage" message="tns:ByteArrayMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

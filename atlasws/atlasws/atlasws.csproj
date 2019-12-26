@@ -1,0 +1,1266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C8C9B5E5-EA51-4337-859D-5B9AA275F7C6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>atlasws</RootNamespace>
+    <AssemblyName>atlasws</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Design.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebDesign.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.11.0.1\lib\net20\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net46\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net46\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="catalogods.cs" />
+    <Compile Include="Categorias.cs" />
+    <Compile Include="codigopost.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="DatOS.cs" />
+    <Compile Include="Operacion.cs" />
+    <Compile Include="Producto.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\atlaservice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\hdiprod\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\hdiservice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\QService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Submarca.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Coberturas.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Coberturas1.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Coberturas2.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Contrat.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Contrat1.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Cotiza_Atlas.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.DatosEndoso.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.DatosNuevaCot.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.DatosSeguridad.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.DatosSeguridad1.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.DatosSeguridad2.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Datos_pet.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.DetCoberEA.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Emision_Atlas.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Errores.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Errores1.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Error_em.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.IF_Transf.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.MarcaEn.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Planes.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Recibos.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Recibos1.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Recibos2.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Recibos3.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Record1.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Record3.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Record5.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Record6.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.RutaImp.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.Rutas.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.SubtipoEn.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.T_resp_a.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.WSSegAtlasImpl.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.WSSegAtlasImplChannel.datasource" />
+    <None Include="Properties\DataSources\atlasws.atlasservice.WSSegAtlasImplClient.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ActualizaEstatusCotizRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ActualizaEstatusCotizResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Ajuste.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.AjusteAdicional.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Banco.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Beneficiario.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.BeneficiarioPreferente.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Beneficiarios.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ByteArrayMessage.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CanalVenta.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CaracteristicasBaseVehiculo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CaracteristicasVehiculoFRMessage.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CaracteristicasVehiculoFronterizoRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CaracteristicasVehiculoFronterizoResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CargarCotizacionRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CargarCotizacionResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CatalogoClave.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CatalogoClaveCollection.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CatalogoDetallesRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CatalogoDetallesRequestDC.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CatalogoDetallesResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CatVehiculosRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CatVehiculosRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Ciudad.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Clausula.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Cliente.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Cobertura.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CoberturaAdaptacionMarsh.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CoberturaCalculadaExpress.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CoberturaEquipoEspecialMarsh.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CoberturaPorKilometro.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CoberturasCalculadasExpress.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CoberturasPorKilometro.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CodigoConfirmacion.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CondicionesCalculo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CondicionesTarificar.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ConductoCobroField.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ConfiguracionExpressPorNegocio.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ConfiguracionObtenerPaquetes.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ConfiguracionPaquete.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ConfiguracionPaqueteBroker.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CotizacionRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CotizacionResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CuponesIniciarViaje.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.CuponesPagarEmitir.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosAdicionalesGLM.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosConductor.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosConsulta.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosContacto.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosCotizacionConfiguracion.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosCotizacionExpress.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosCotizacionFronterizos.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosCotizacionFronterizosRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosCotizacionFronterizosResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosCotizExpaGuardar.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosDireccion.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosEndoso.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosEndosoNegocio.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosEnvioCorreo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosEnvioCorreo1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosFormasPagos.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosGeneralesBase.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosGeneralesFisica.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosGeneralesMoral.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosImpresion.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosNegocioRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosNegocioRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosReciboPagoEnLinea.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DatosVehiculoFronterizo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DCInformacionClienteVehculoSoctiaParametros.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DCInformacionRecibosScotiaParametros.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Deducible.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.DescripcionRiesgo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Direccion.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmiEndBenPreferenteRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmiEndCancelProrrataPorNegocioRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmiEndCancelProrrataRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmiEndCondCobroACtaCheqNegocioRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmiEndCondCobroACtaCheqRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmiEndCondCobroAEfecRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmiEndCondCobroATarCredNegocioRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmiEndCondCobroATarCredRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmiEndDatosCtePFRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmiEndDatosCtePMRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmiEndDatosVehiculoRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmiEndNegocioResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmiEndResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmiteCotGuardadaRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmiteCotGuardadaResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmitirCotizacionAgenteRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmitirCotizacionAgenteRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmitirCotizacionRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmitirCotizacionRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmitirCotizacionResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmitirCotizDirectRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmitirCotizDirectRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmitirMultiCotizacionConfiguracionRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmitirMultiCotizacionConfiguracionRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmitirMultiCotizacionRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmitirMultiCotizacionRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmitirMultiCotizacionResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmitirRemanente.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmitirRemanenteRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EmitirRemanenteRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EndBeneficiarioPreferente.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EndCancelProrrata.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EndCancelProrrataNegocio.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EndCondCobroACuentaCheques.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EndCondCobroACuentaChequesNegocio.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EndCondCobroATarjetaCredito.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EndCondCobroATarjetaCreditoNegocio.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EndDatosContratanteFisica.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EndDatosContratanteMoral.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EndDatosVehiculo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EndosoBase.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Estado.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.EstadoCivil.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.FileUpdateInfo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.FinalizarViajeRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.FinalizarViajeResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.FormaPago.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GetDataRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GetDataRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GetFileRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GetFileRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GetFileUpdateInfoRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GetFileUpdateInfoRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GetFileUpdateInfoResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GetGroupsRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GetGroupsResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GetStructChangeScriptsRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GetStructChangeScriptsRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GetStructChangeScriptsResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GetUpdateScriptsRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GetUpdateScriptsResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GroupInfo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GuardarCotizacionExpressRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GuardarCotizacionExpressRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GuardarCotizacionRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GuardarCotizacionRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.GuardarCotizacionResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ImprimirCotizacionResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ImprimirEndosoRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ImprimirEndosoResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.InformacionAdicionalCorredor.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.InformacionCaracteristica.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.InformacionClienteVehiculoScotiaRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.InformacionClienteVehiculoScotiaResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.InformacionContacto.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.InformacionDXN.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.InformacionPago.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.InformacionRecibosScotiaRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.InformacionRecibosScotiaResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.InformacionSumasAseguradas.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.InfoUbicacion.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.IniciarViajeRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.IniciarViajeResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.IntMessage.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ListaCondicionesTarificar.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ListaConfiguracionesPaquete.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ListaDatosCotizacion.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ListaDatosCotizacionConfiguracion.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ListaInformacionPoliza.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ListaPolizasImprimir.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ListaSumaAsegurada.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ListaSumasAseguradas.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.LugarCirculacion.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Marca.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Mensaje.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Modelo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.MotivoAjuste.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.MultiPolizaAImprimirRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.MultiPolizaAImprimirRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Municipio.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Nacionalidad.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.NombresConducor.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerBancosRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerBancosResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerCanalesVentaRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerCanalesVentaResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerCiudadesRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerCiudadesResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerCoberturasRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerCoberturasRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerCoberturasResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerConductoRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerConductoResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerDeduciblesRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerDeduciblesRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerDeduciblesResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerDescripcionesRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerDescripcionesResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerEstadoCivilRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerEstadoCivilResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerEstadosRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerEstadosResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerFactoresMultianualesOficinaRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerFactoresMultianualesOficinaResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerFacturaRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerFacturaRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerFormasPagoRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerFormasPagoResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerInformacionVehiculoRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerInformacionVehiculoRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerInformacionVehiculoResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerInfoUbicacionRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerInfoUbicacionResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerLugarCirculacionRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerLugarCirculacionRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerLugarCirculacionResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerMarcasRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerMarcasRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerMarcasResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerModelosRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerModelosRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerModelosResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerMotivosAjusteRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerMotivosAjusteResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerMultiConfiguracionPaquetesExpressRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerMultiplesFacturasRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerMultiplesFacturasRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerMunicipiosRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerMunicipiosRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerMunicipiosResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerNacionalidadesRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerNacionalidadesResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerOcupacionesConductorRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerOcupacionesConductorResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerOcupacionesRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerOcupacionesResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPaisesRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPaisesResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPaquetesAgenteRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPaquetesAgenteRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPaquetesExpressBrokerRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPaquetesExpressBrokerResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPaquetesExpressPorNegocioRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPaquetesExpressRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPaquetesExpressRespose.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPaquetesMixtoRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPaquetesMixtoRespose.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPaquetesNegocioRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPaquetesNegocioRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPaquetesRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPaquetesRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPaquetesResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerParentescosRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerParentescosResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPolizaResumenResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerPolizasRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerProveedoresAsistenciaRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerProveedoresAsistenciaResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerRecibosDesglosadosRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerRecibosDesglosadosResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerRecibosResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerRemolquesRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerRemolquesResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerRiesgosCargaRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerRiesgosCargaResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerRiesgosRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerRiesgosResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerServiciosRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerServiciosResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerSexoRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerSexoResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerSumaAseguradaFRRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerSumaAseguradaFRResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerSumaAseguradaRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerSumaAseguradaResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTiposAjusteRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTiposAjusteResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTiposBeneficiarioPreferenteRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTiposBeneficiarioPreferenteResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTiposCuentaRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTiposCuentaResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTiposFiltradosRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTiposFiltradosRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTiposRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTiposRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTiposResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTiposSumaAseguradaRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTiposSumaAseguradaRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTiposSumaAseguradaResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTiposVehiculoRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTiposVehiculoResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTipoVehiculoRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTipoVehiculoResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTonelajesRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTonelajesRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTonelajesResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTransmisionesRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTransmisionesRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerTransmisionesResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerUsoRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerUsosRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerUsosVehiculoResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerVehiculosParametrosDC.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerVehiculoVersionesRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerVehiculoVersionesRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerVehiculoVersionesResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerVersionesRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerVersionesRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerVersionesResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerViajesCoberturaDinamicaPolizasRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerViajesCoberturaDinamicaPolizasResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerViajesCoberturaDinamicaRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerViajesCoberturaDinamicaResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerXmlRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerXmlRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerZonasRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ObtenerZonasResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Ocupacion.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PagandoReciboRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PagandoViajeRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PagarEmitirCotizacionBrokerRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PagarEmitirCotizacionBrokerResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PagoViajeAcumuladoResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PagoViajeAcumuladosRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaisNacionalidad.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaqueteCalculadoExpress.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaqueteCoberturas.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaqueteConfiguracionTarificarExpress.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaqueteFronterizo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaquetesCalculadosExpress.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaquetesCoberturas.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaquetesCoberturasPorPaqueteRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaquetesCoberturasPorPaqueteResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaquetesCoberturasPorVehiculo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaquetesCoberturasPorVehiculoRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaquetesCoberturasPorVehiculoResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaquetesConfiguracionTarificarExpress.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaquetesTarificarExpress.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaquetesTarificarExpressBroker.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaqueteTarificarExpress.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PaqueteTarificarExpressBroker.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ParametrosCargaCotizacion.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ParametrosRespuestaPagoRecibo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Parentesco.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PolizaAImprimir.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PolizaAImprimir1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PolizaImprimir.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PolizaImprimirEndoso.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PolizaImprimirEndosoRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PolizaImprimirEndosoRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PolizaImprimirPorNegocioRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PolizaImprimirPorNegocioRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PolizaInfoGeneral.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PolizaNegocioImprimir.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PrimaNoDevengadaResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ProveedorAsistencia.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PublicServicesAutosContract.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PublicServicesAutosContractChannel.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.PublicServicesAutosContractClient.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ReciboDesglosado.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ReciboGenerado.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ReciboInfo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Recibos.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.RecibosDesglosados.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.RecibosGenerados.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.RecuperarCotizacionGuardadaResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.RecuperarCotizGuardadaExpressRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.RegisterUserRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.RegisterUserRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Remolque.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.RiesgoCarga.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Servicio.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Sexo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.SolicitarPolizaAgenteRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.SolicitarPolizaAgenteRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.SolicitarPolizaRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.SolicitarPolizaRequest1.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.SolicitarPolizaResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.SolicitudesPolizaInfo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.SolicitudPolizaInfo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.SolicitudRecibosDesglosados.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.StringArrayContract.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.StringMessage.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.StructChangeInfo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.TableUpdateInfo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.TarificacionesExpress.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.TarificacionExpress.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.TarjetaBancaria.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.TestUserRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.TestUserResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Tipo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.TipoAjuste.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.TipoBeneficiarioPreferente.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.TipoCuenta.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.TipoListado.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.TipoSumaAsegurada.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.TipoVehiculo.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.TipoVehiculoDC.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Tonelaje.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Totales.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Transmision.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Ubicacion.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Uso.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ValidarCodigoDeConfirmacionRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ValidarCodigoDeConfirmacionResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ValidarTarjeta.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ValidarTarjetaRequest.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ValidarTarjetaResponse.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.ValorSumaAsegurada.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.VehiculoVersion.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Version.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Vigencia.datasource" />
+    <None Include="Properties\DataSources\atlasws.hdiservice.Zona.datasource" />
+    <None Include="Properties\DataSources\catalogods.datasource" />
+    <None Include="Properties\DataSources\FutureVisitsModel.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
+    <None Include="Service References\atlaservice\atlasws.atlaservice.MarcaMod.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\atlaservice\atlasws.atlaservice.MarcaMod1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\atlaservice\atlasws.atlaservice.ModeloMS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\atlaservice\atlasws.atlaservice.VehiMod.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\atlaservice\com.unipaas.seguros_atlas_sa.WS_CatXMod.wsdl" />
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Bancos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.ByteArrayContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.CanalesVenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.CaracteristicasVehiculo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.CatalogoDetallesResponseDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Ciudades.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.CoberturaDinamicaResultado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Coberturas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.DatosCotizacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.DatosTarjetaBancaria.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.DatosTipoVehiculo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.DCImprimirCotizacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.DCInformacionClienteVehiculoScotia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.DCInformacionRecibosScotia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Deducibles.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.DescripcionesRiesgos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Error.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.ErrorPagoEnLinea.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Estados.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.EstadosCiviles.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.FileUpdateInfoCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.FormasPago.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.GroupInfoCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.InformacionCaracteristicaCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.InformacionCotizacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.InformacionEndoso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.InformacionEndosoNegocio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.InformacionImpresioncs.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.InformacionPaquetes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.InformacionPaquetesExpress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.InformacionPaquetesMixto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.InformacionPoliza.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.InformacionRecibosDesglosados.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.InformacionSolicitudPoliza.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.InfoUbicaciones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.ListaConductosCobro.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.ListaPaquetesCoberturasPorVehiculo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.LugaresCirculacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Marcas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Mensajes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Modelos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.MotivosAjuste.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Movimiento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.MultiInformacionPoliza.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Municipios.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Nacionalidades.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Ocupaciones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.PaisesNacionalidad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Paquete.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Parentescos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.PolizasInfoGeneral.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.PrimaNoDevengadaDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.ProveedoresAsistencia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.RecibosInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Remolques.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.RespuestaBancoPagoEnLinea.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Resultado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.RiesgosCarga.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Servicios.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Sexos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.StructChangeInfoCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.SumaAseguradaFronterizosRegularizados.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.SumasAseguradas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.TableUpdateInfoCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Tipos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.TiposAjuste.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.TiposBeneficiarioPreferente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.TiposCuenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.TiposSumaAsegurada.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.TiposVehiculo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Tonelajes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Transmisiones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Usos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.ValuacionFronterizo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.VehiculoVersiones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Versiones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Viaje.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.ViajePoliza.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\atlasws.hdiprod.Zonas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiprod\PublicServicesAutos.wsdl" />
+    <None Include="Service References\hdiprod\PublicServicesAutos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiprod\PublicServicesAutos1.wsdl" />
+    <None Include="Service References\hdiprod\PublicServicesAutos1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiprod\PublicServicesAutos2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiprod\PublicServicesAutos3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiprod\PublicServicesAutos4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiprod\PublicServicesAutos5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiprod\PublicServicesAutos6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiprod\PublicServicesAutos7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiprod\PublicServicesAutos8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiprod\PublicServicesAutos9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Bancos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.ByteArrayContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.CanalesVenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.CaracteristicasVehiculo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.CatalogoDetallesResponseDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Ciudades.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.CoberturaDinamicaResultado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Coberturas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.DatosCotizacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.DatosTarjetaBancaria.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.DatosTipoVehiculo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.DCImprimirCotizacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.DCInformacionClienteVehiculoScotia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.DCInformacionRecibosScotia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Deducibles.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.DescripcionesRiesgos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Error.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.ErrorPagoEnLinea.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Estados.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.EstadosCiviles.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.FileUpdateInfoCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.FormasPago.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.GroupInfoCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.InformacionCaracteristicaCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.InformacionCotizacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.InformacionEndoso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.InformacionEndosoNegocio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.InformacionImpresioncs.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.InformacionPaquetes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.InformacionPaquetesExpress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.InformacionPaquetesMixto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.InformacionPoliza.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.InformacionRecibosDesglosados.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.InformacionSolicitudPoliza.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.InfoUbicaciones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.ListaConductosCobro.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.ListaPaquetesCoberturasPorVehiculo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.LugaresCirculacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Marcas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Mensajes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Modelos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.MotivosAjuste.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Movimiento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.MultiInformacionPoliza.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Municipios.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Nacionalidades.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Ocupaciones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.PaisesNacionalidad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Paquete.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Parentescos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.PolizasInfoGeneral.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.PrimaNoDevengadaDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.ProveedoresAsistencia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.RecibosInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Remolques.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.RespuestaBancoPagoEnLinea.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Resultado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.RiesgosCarga.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Servicios.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Sexos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.StructChangeInfoCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.SumaAseguradaFronterizosRegularizados.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.SumasAseguradas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.TableUpdateInfoCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Tipos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.TiposAjuste.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.TiposBeneficiarioPreferente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.TiposCuenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.TiposSumaAsegurada.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.TiposVehiculo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Tonelajes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Transmisiones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Usos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.ValuacionFronterizo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.VehiculoVersiones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Versiones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Viaje.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.ViajePoliza.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\atlasws.hdiservice.Zonas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\hdiservice\PublicServicesAutos.wsdl" />
+    <None Include="Service References\hdiservice\PublicServicesAutos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiservice\PublicServicesAutos1.wsdl" />
+    <None Include="Service References\hdiservice\PublicServicesAutos1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiservice\PublicServicesAutos2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiservice\PublicServicesAutos3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiservice\PublicServicesAutos4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiservice\PublicServicesAutos5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiservice\PublicServicesAutos6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiservice\PublicServicesAutos7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiservice\PublicServicesAutos8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\hdiservice\PublicServicesAutos9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QService\wsTarifa.wsdl" />
+    <None Include="Service References\ServiceReference1\service.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\atlaservice\" />
+    <WCFMetadataStorage Include="Service References\hdiprod\" />
+    <WCFMetadataStorage Include="Service References\hdiservice\" />
+    <WCFMetadataStorage Include="Service References\QService\" />
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\hdiservice\PublicServicesAutos.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\hdiservice\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\hdiservice\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\hdiservice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report10.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="Report5.rdlc" />
+    <EmbeddedResource Include="Report6.rdlc" />
+    <EmbeddedResource Include="Report7.rdlc" />
+    <EmbeddedResource Include="Report8.rdlc" />
+    <EmbeddedResource Include="Report9.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x64\msvcr100.dll">
+      <Link>SqlServerTypes\x64\msvcr100.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x64\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x64\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x86\msvcr100.dll">
+      <Link>SqlServerTypes\x86\msvcr100.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x86\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x86\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\atlaservice\configuration91.svcinfo" />
+    <None Include="Service References\atlaservice\configuration.svcinfo" />
+    <None Include="Service References\atlaservice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\QService\wsTarifa.disco" />
+    <None Include="Service References\QService\configuration91.svcinfo" />
+    <None Include="Service References\QService\configuration.svcinfo" />
+    <None Include="Service References\QService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\hdiprod\PublicServicesAutos.disco" />
+    <None Include="Service References\hdiprod\configuration91.svcinfo" />
+    <None Include="Service References\hdiprod\configuration.svcinfo" />
+    <None Include="Service References\hdiprod\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceReference1\service.disco" />
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="SqlServerTypes\readme.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

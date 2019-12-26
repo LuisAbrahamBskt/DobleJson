@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://unoseguros.com/services/CotizacionAutos/2010" elementFormDefault="qualified" targetNamespace="http://unoseguros.com/services/CotizacionAutos/2010" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="TarjetaBancaria">
+    <xs:sequence>
+      <xs:element name="IdBanco" nillable="true" type="xs:string" />
+      <xs:element name="IdTipoTarjeta" nillable="true" type="xs:string" />
+      <xs:element name="IdTipoEmisor" nillable="true" type="xs:string" />
+      <xs:element name="PreFijoTarjeta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TarjetaBancaria" nillable="true" type="tns:TarjetaBancaria" />
+</xs:schema>

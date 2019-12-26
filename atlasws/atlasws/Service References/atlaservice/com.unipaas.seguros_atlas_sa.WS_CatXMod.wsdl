@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:map="http://systinet.com/mapping/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://systinet.com/wsdl/com/unipaas/seguros_atlas_sa/WS_CatXMod/" xmlns:ns0="http://systinet.com/xsd/SchemaTypes/" name="com.unipaas.seguros_atlas_sa.WS_CatXMod.WS_CatXModImpl" targetNamespace="http://systinet.com/wsdl/com/unipaas/seguros_atlas_sa/WS_CatXMod/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://systinet.com/wsdl/com/unipaas/seguros_atlas_sa/WS_CatXMod/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:complexType name="MarcaModPet">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <map:java-type name="com.unipaas.seguros_atlas_sa.WS_CatXMod.MarcaModPet" />
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Categoria" nillable="true" type="xsd:integer" />
+          <xsd:element name="Cve_negocio" nillable="true" type="xsd:integer" />
+          <xsd:element name="Liga" nillable="true" type="xsd:integer" />
+          <xsd:element name="MPassword" nillable="true" type="xsd:string" />
+          <xsd:element name="MUsuario" nillable="true" type="xsd:string" />
+          <xsd:element name="Modelo" nillable="true" type="xsd:integer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfMarcaModPet">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <map:java-type name="[Lcom.unipaas.seguros_atlas_sa.WS_CatXMod.MarcaModPet;" />
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="MarcaModPet" nillable="true" type="tns:MarcaModPet" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="WS_ModMarcas">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="P_XHML_IN" nillable="true" type="tns:ArrayOfMarcaModPet" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="MarcaMod">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <map:java-type name="com.unipaas.seguros_atlas_sa.WS_CatXMod.MarcaMod" />
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Marca_mod" nillable="true" type="xsd:integer" />
+          <xsd:element name="des_marca" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfMarcaMod">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <map:java-type name="[Lcom.unipaas.seguros_atlas_sa.WS_CatXMod.MarcaMod;" />
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="MarcaMod" nillable="true" type="tns:MarcaMod" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="WS_ModMarcasResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="response" nillable="true" type="tns:ArrayOfMarcaMod" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="SubTipoModPet">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <map:java-type name="com.unipaas.seguros_atlas_sa.WS_CatXMod.SubTipoModPet" />
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Categoria" nillable="true" type="xsd:integer" />
+          <xsd:element name="Cve_negocio" nillable="true" type="xsd:integer" />
+          <xsd:element name="Liga" nillable="true" type="xsd:integer" />
+          <xsd:element name="MPassword" nillable="true" type="xsd:string" />
+          <xsd:element name="MUsuario" nillable="true" type="xsd:string" />
+          <xsd:element name="Marca" nillable="true" type="xsd:integer" />
+          <xsd:element name="Modelo" nillable="true" type="xsd:integer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfSubTipoModPet">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <map:java-type name="[Lcom.unipaas.seguros_atlas_sa.WS_CatXMod.SubTipoModPet;" />
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="SubTipoModPet" nillable="true" type="tns:SubTipoModPet" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="WS_ModSubTipos">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="P_XHML_IN" nillable="true" type="tns:ArrayOfSubTipoModPet" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="MarcaMod1">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <map:java-type name="com.unipaas.seguros_atlas_sa.WS_CatXMod.MarcaMod1" />
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Cve_categoria" nillable="true" type="xsd:integer" />
+          <xsd:element name="Descripcion_subtipo" nillable="true" type="xsd:string" />
+          <xsd:element name="Subtipo" nillable="true" type="xsd:integer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfMarcaMod1">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <map:java-type name="[Lcom.unipaas.seguros_atlas_sa.WS_CatXMod.MarcaMod1;" />
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="MarcaMod1" nillable="true" type="tns:MarcaMod1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="WS_ModSubTiposResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="response" nillable="true" type="tns:ArrayOfMarcaMod1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="VehiModPet">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <map:java-type name="com.unipaas.seguros_atlas_sa.WS_CatXMod.VehiModPet" />
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Categoria" nillable="true" type="xsd:integer" />
+          <xsd:element name="Cve_negocio" nillable="true" type="xsd:integer" />
+          <xsd:element name="Liga" nillable="true" type="xsd:integer" />
+          <xsd:element name="MPassword" nillable="true" type="xsd:string" />
+          <xsd:element name="MUsuario" nillable="true" type="xsd:string" />
+          <xsd:element name="Marca" nillable="true" type="xsd:integer" />
+          <xsd:element name="Modelo" nillable="true" type="xsd:integer" />
+          <xsd:element name="SubTipo" nillable="true" type="xsd:integer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfVehiModPet">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <map:java-type name="[Lcom.unipaas.seguros_atlas_sa.WS_CatXMod.VehiModPet;" />
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="VehiModPet" nillable="true" type="tns:VehiModPet" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="WS_ModVehiculos">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="P_XHML_IN" nillable="true" type="tns:ArrayOfVehiModPet" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="VehiMod">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <map:java-type name="com.unipaas.seguros_atlas_sa.WS_CatXMod.VehiMod" />
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="cve_amis" nillable="true" type="xsd:string" />
+          <xsd:element name="cve_categoria" nillable="true" type="xsd:integer" />
+          <xsd:element name="cve_vehiculo" nillable="true" type="xsd:integer" />
+          <xsd:element name="des_vehiculo" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfVehiMod">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <map:java-type name="[Lcom.unipaas.seguros_atlas_sa.WS_CatXMod.VehiMod;" />
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="VehiMod" nillable="true" type="tns:VehiMod" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="WS_ModVehiculosResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="response" nillable="true" type="tns:ArrayOfVehiMod" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ModMS_pet">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <map:java-type name="com.unipaas.seguros_atlas_sa.WS_CatXMod.ModMS_pet" />
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Categoria" nillable="true" type="xsd:integer" />
+          <xsd:element name="Cve_negocio" nillable="true" type="xsd:integer" />
+          <xsd:element name="Liga" nillable="true" type="xsd:integer" />
+          <xsd:element name="MPassword" nillable="true" type="xsd:string" />
+          <xsd:element name="MUsuario" nillable="true" type="xsd:string" />
+          <xsd:element name="Marca" nillable="true" type="xsd:integer" />
+          <xsd:element name="SubTipo" nillable="true" type="xsd:integer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfModMS_pet">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <map:java-type name="[Lcom.unipaas.seguros_atlas_sa.WS_CatXMod.ModMS_pet;" />
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ModMS_pet" nillable="true" type="tns:ModMS_pet" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="WS_Modelos_MS">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="P_XHML_IN" nillable="true" type="tns:ArrayOfModMS_pet" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ModeloMS">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <map:java-type name="com.unipaas.seguros_atlas_sa.WS_CatXMod.ModeloMS" />
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Modelo" nillable="true" type="xsd:integer" />
+          <xsd:element name="cve_categoria" nillable="true" type="xsd:integer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfModeloMS">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <map:java-type name="[Lcom.unipaas.seguros_atlas_sa.WS_CatXMod.ModeloMS;" />
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ModeloMS" nillable="true" type="tns:ModeloMS" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="WS_Modelos_MSResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="response" nillable="true" type="tns:ArrayOfModeloMS" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://systinet.com/xsd/SchemaTypes/" elementFormDefault="qualified" targetNamespace="http://systinet.com/xsd/SchemaTypes/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="idoox-java-mapping.java.lang.Exception" nillable="true" type="xsd:anyType" />
+    </xsd:schema>
+  </types>
+  <message name="Exception">
+    <part name="idoox-java-mapping.java.lang.Exception" element="ns0:idoox-java-mapping.java.lang.Exception" />
+  </message>
+  <message name="WS_CatXModImpl_WS_ModMarcas_Request_Soap">
+    <part name="parameters" element="tns:WS_ModMarcas" />
+  </message>
+  <message name="WS_CatXModImpl_WS_ModMarcas_Response_Soap">
+    <part name="parameters" element="tns:WS_ModMarcasResponse" />
+  </message>
+  <message name="WS_CatXModImpl_WS_ModSubTipos_Request_Soap">
+    <part name="parameters" element="tns:WS_ModSubTipos" />
+  </message>
+  <message name="WS_CatXModImpl_WS_ModSubTipos_Response_Soap">
+    <part name="parameters" element="tns:WS_ModSubTiposResponse" />
+  </message>
+  <message name="WS_CatXModImpl_WS_ModVehiculos_Request_Soap">
+    <part name="parameters" element="tns:WS_ModVehiculos" />
+  </message>
+  <message name="WS_CatXModImpl_WS_ModVehiculos_Response_Soap">
+    <part name="parameters" element="tns:WS_ModVehiculosResponse" />
+  </message>
+  <message name="WS_CatXModImpl_WS_Modelos_MS_Request_Soap">
+    <part name="parameters" element="tns:WS_Modelos_MS" />
+  </message>
+  <message name="WS_CatXModImpl_WS_Modelos_MS_Response_Soap">
+    <part name="parameters" element="tns:WS_Modelos_MSResponse" />
+  </message>
+  <portType name="WS_CatXModImpl">
+    <operation name="WS_ModMarcas">
+      <input message="tns:WS_CatXModImpl_WS_ModMarcas_Request_Soap" />
+      <output message="tns:WS_CatXModImpl_WS_ModMarcas_Response_Soap" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="WS_ModSubTipos">
+      <input message="tns:WS_CatXModImpl_WS_ModSubTipos_Request_Soap" />
+      <output message="tns:WS_CatXModImpl_WS_ModSubTipos_Response_Soap" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="WS_ModVehiculos">
+      <input message="tns:WS_CatXModImpl_WS_ModVehiculos_Request_Soap" />
+      <output message="tns:WS_CatXModImpl_WS_ModVehiculos_Response_Soap" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="WS_Modelos_MS">
+      <input message="tns:WS_CatXModImpl_WS_Modelos_MS_Request_Soap" />
+      <output message="tns:WS_CatXModImpl_WS_Modelos_MS_Response_Soap" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+  </portType>
+  <binding name="WS_CatXModImpl" type="tns:WS_CatXModImpl">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="WS_ModMarcas">
+      <map:java-operation name="WS_ModMarcas" signature="KFtMY29tL3VuaXBhYXMvc2VndXJvc19hdGxhc19zYS9XU19DYXRYTW9kL01hcmNhTW9kUGV0OylbTGNvbS91bmlwYWFzL3NlZ3Vyb3NfYXRsYXNfc2EvV1NfQ2F0WE1vZC9NYXJjYU1vZDs=" unwrapped="true" wsiAttachments="true" parameterOrder="P_XHML_IN">
+        <map:fault name="Exception" java-type="java.lang.Exception" />
+      </map:java-operation>
+      <soap:operation soapAction="http://systinet.com/wsdl/com/unipaas/seguros_atlas_sa/WS_CatXMod/WS_CatXModImpl#WS_ModMarcas?KFtMY29tL3VuaXBhYXMvc2VndXJvc19hdGxhc19zYS9XU19DYXRYTW9kL01hcmNhTW9kUGV0OylbTGNvbS91bmlwYWFzL3NlZ3Vyb3NfYXRsYXNfc2EvV1NfQ2F0WE1vZC9NYXJjYU1vZDs=" style="document" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" parts="parameters" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="WS_ModSubTipos">
+      <map:java-operation name="WS_ModSubTipos" signature="KFtMY29tL3VuaXBhYXMvc2VndXJvc19hdGxhc19zYS9XU19DYXRYTW9kL1N1YlRpcG9Nb2RQZXQ7KVtMY29tL3VuaXBhYXMvc2VndXJvc19hdGxhc19zYS9XU19DYXRYTW9kL01hcmNhTW9kMTs=" unwrapped="true" wsiAttachments="true" parameterOrder="P_XHML_IN">
+        <map:fault name="Exception" java-type="java.lang.Exception" />
+      </map:java-operation>
+      <soap:operation soapAction="http://systinet.com/wsdl/com/unipaas/seguros_atlas_sa/WS_CatXMod/WS_CatXModImpl#WS_ModSubTipos?KFtMY29tL3VuaXBhYXMvc2VndXJvc19hdGxhc19zYS9XU19DYXRYTW9kL1N1YlRpcG9Nb2RQZXQ7KVtMY29tL3VuaXBhYXMvc2VndXJvc19hdGxhc19zYS9XU19DYXRYTW9kL01hcmNhTW9kMTs=" style="document" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" parts="parameters" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="WS_ModVehiculos">
+      <map:java-operation name="WS_ModVehiculos" signature="KFtMY29tL3VuaXBhYXMvc2VndXJvc19hdGxhc19zYS9XU19DYXRYTW9kL1ZlaGlNb2RQZXQ7KVtMY29tL3VuaXBhYXMvc2VndXJvc19hdGxhc19zYS9XU19DYXRYTW9kL1ZlaGlNb2Q7" unwrapped="true" wsiAttachments="true" parameterOrder="P_XHML_IN">
+        <map:fault name="Exception" java-type="java.lang.Exception" />
+      </map:java-operation>
+      <soap:operation soapAction="http://systinet.com/wsdl/com/unipaas/seguros_atlas_sa/WS_CatXMod/WS_CatXModImpl#WS_ModVehiculos?KFtMY29tL3VuaXBhYXMvc2VndXJvc19hdGxhc19zYS9XU19DYXRYTW9kL1ZlaGlNb2RQZXQ7KVtMY29tL3VuaXBhYXMvc2VndXJvc19hdGxhc19zYS9XU19DYXRYTW9kL1ZlaGlNb2Q7" style="document" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" parts="parameters" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="WS_Modelos_MS">
+      <map:java-operation name="WS_Modelos_MS" signature="KFtMY29tL3VuaXBhYXMvc2VndXJvc19hdGxhc19zYS9XU19DYXRYTW9kL01vZE1TX3BldDspW0xjb20vdW5pcGFhcy9zZWd1cm9zX2F0bGFzX3NhL1dTX0NhdFhNb2QvTW9kZWxvTVM7" unwrapped="true" wsiAttachments="true" parameterOrder="P_XHML_IN">
+        <map:fault name="Exception" java-type="java.lang.Exception" />
+      </map:java-operation>
+      <soap:operation soapAction="http://systinet.com/wsdl/com/unipaas/seguros_atlas_sa/WS_CatXMod/WS_CatXModImpl#WS_Modelos_MS?KFtMY29tL3VuaXBhYXMvc2VndXJvc19hdGxhc19zYS9XU19DYXRYTW9kL01vZE1TX3BldDspW0xjb20vdW5pcGFhcy9zZWd1cm9zX2F0bGFzX3NhL1dTX0NhdFhNb2QvTW9kZWxvTVM7" style="document" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" parts="parameters" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="WS_CatXModImpl">
+    <port name="WS_CatXModImpl" binding="tns:WS_CatXModImpl">
+      <soap:address location="https://calypso.segurosatlas.com.mx/WSSegAtlas/WS_CatXMod/" />
+    </port>
+  </service>
+</definitions>

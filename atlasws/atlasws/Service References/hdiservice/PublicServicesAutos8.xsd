@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Public.Services.Autos.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Public.Services.Autos.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://enterpriseservices.implementation.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?xsd=xsd0" namespace="http://hdi.com.mx/services/public" />
+  <xs:complexType name="DatosEndosoNegocio">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://hdi.com.mx/services/public" base="q1:DatosEndoso">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NumCis" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DatosEndosoNegocio" nillable="true" type="tns:DatosEndosoNegocio" />
+</xs:schema>

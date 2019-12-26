@@ -1,0 +1,1437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://hdi.com.mx/services/public" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PublicServicesAutos" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="ClearUsernameBinding_PublicServicesAutosContract_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://hdi.com.mx/services/public" location="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="ClearUsernameBinding_PublicServicesAutosContract" type="i0:PublicServicesAutosContract">
+    <wsp:PolicyReference URI="#ClearUsernameBinding_PublicServicesAutosContract_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerMultiPolizaSinRecibosPDF">
+      <soap12:operation soapAction="ObtenerMulitPolizaSinRecibosPDF" style="document" />
+      <wsdl:input name="MultiPolizaAImprimirRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ByteArrayMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposSumaAsegurada">
+      <soap12:operation soapAction="ObtenerTiposSumaAsegurada" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerTiposSumaAseguradaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposSumaAseguradaFR">
+      <soap12:operation soapAction="ObtenerTiposSumaAseguradaFR" style="document" />
+      <wsdl:input name="CaracteristicasVehiculoFRMessage">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerTiposSumaAseguradaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSumaAseguradaFronterizosRegularizados">
+      <soap12:operation soapAction="ObtenerSumaAseguradaFronterizosRegularizados" style="document" />
+      <wsdl:input name="ObtenerSumaAseguradaFRRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerSumaAseguradaFRResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFactoresMultianualesOficina">
+      <soap12:operation soapAction="ObtenerFactoresMultianualesOficina" style="document" />
+      <wsdl:input name="ObtenerFactoresMultianualesOficinaRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerFactoresMultianualesOficinaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposSumaAseguradaPorNegocio">
+      <soap12:operation soapAction="ObtenerTiposSumaAseguradaPorNegocio" style="document" />
+      <wsdl:input name="DatosNegocioRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerTiposSumaAseguradaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFormasPagoPorNegocio">
+      <soap12:operation soapAction="ObtenerFormasPagoPorNegocio" style="document" />
+      <wsdl:input name="DatosNegocioRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerFormasPagoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsosVehiculoPorNegocio">
+      <soap12:operation soapAction="ObtenerUsosVehiculoPorNegocio" style="document" />
+      <wsdl:input name="DatosNegocioRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerUsosVehiculoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerConductosCobroPorNegocio">
+      <soap12:operation soapAction="ObtenerConductosCobroPorNegocio" style="document" />
+      <wsdl:input name="DatosNegocioRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerConductoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposVehiculoPorNegocio">
+      <soap12:operation soapAction="ObtenerTiposVehiculoPorNegocio" style="document" />
+      <wsdl:input name="DatosNegocioRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerTiposVehiculoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetesPorNegocio">
+      <soap12:operation soapAction="ObtenerPaqutesPorNegocio" style="document" />
+      <wsdl:input name="ObtenerPaquetesNegocioRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerPaquetesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetesFronterizos">
+      <soap12:operation soapAction="ObtenerPaquetesFronterizos" style="document" />
+      <wsdl:input name="ObtenerPaquetesNegocioRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerPaquetesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirCotizacionPorNegocio">
+      <soap12:operation soapAction="EmitirCotizacionPorNegocio" style="document" />
+      <wsdl:input name="EmitirCotizacionRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmitirCotizacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImprimirPolizaPorNegocio">
+      <soap12:operation soapAction="ImprimirPolizaPorNegocio" style="document" />
+      <wsdl:input name="PolizaImprimirPorNegocioRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ByteArrayMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetesPorVersionVehiculo">
+      <soap12:operation soapAction="ObtenerPaquetesPorVersionVehiculo" style="document" />
+      <wsdl:input name="PaquetesCoberturasPorVehiculoRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PaquetesCoberturasPorVehiculoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndBeneficiarioPreferente">
+      <soap12:operation soapAction="EmitirEndBeneficiarioPreferenteResponse" style="document" />
+      <wsdl:input name="EmiEndBenPreferenteRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmiEndResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndDatosVehiculo">
+      <soap12:operation soapAction="EmitirEndDatosVehiculo" style="document" />
+      <wsdl:input name="EmiEndDatosVehiculoRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmiEndResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndCondCobroATarjetaCreditoNegocio">
+      <soap12:operation soapAction="EmitirEndCondCobroATarjetaCreditoNegocio" style="document" />
+      <wsdl:input name="EmiEndCondCobroATarCredNegocioRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmiEndNegocioResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndCondCobroATarjetaCredito">
+      <soap12:operation soapAction="EmitirEndCondCobroATarjetaCredito" style="document" />
+      <wsdl:input name="EmiEndCondCobroATarCredRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmiEndResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndCondCobroACuentaCheques">
+      <soap12:operation soapAction="EmitirEndCondCobroACuentaCheques" style="document" />
+      <wsdl:input name="EmiEndCondCobroACtaCheqRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmiEndResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndCondCobroAEfectivo">
+      <soap12:operation soapAction="EmitirEndCondCobroAEfectivo" style="document" />
+      <wsdl:input name="EmiEndCondCobroAEfecRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmiEndResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndCondCobroACuentaChequesNegocio">
+      <soap12:operation soapAction="EmitirEndCondCobroACuentaChequesNegocio" style="document" />
+      <wsdl:input name="EmiEndCondCobroACtaCheqNegocioRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmiEndNegocioResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndDatosContratanteFisica">
+      <soap12:operation soapAction="EmitirEndDatosContratanteFisica" style="document" />
+      <wsdl:input name="EmiEndDatosCtePFRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmiEndResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndDatosContratanteMoral">
+      <soap12:operation soapAction="EmitirEndDatosContratanteMoral" style="document" />
+      <wsdl:input name="EmiEndDatosCtePMRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmiEndResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImprimirEndoso">
+      <soap12:operation soapAction="ImprimirEndoso" style="document" />
+      <wsdl:input name="ImprimirEndosoRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ImprimirEndosoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPolizaPDFEnd">
+      <soap12:operation soapAction="ObtenerPolizaPDFEnd" style="document" />
+      <wsdl:input name="PolizaImprimirEndosoRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ByteArrayMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetesPorVehiculoPaquete">
+      <soap12:operation soapAction="ObtenerPaquetesPorVehiculoPaquete" style="document" />
+      <wsdl:input name="PaquetesCoberturasPorPaqueteRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PaquetesCoberturasPorPaqueteResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndCancelProrrata">
+      <soap12:operation soapAction="EmitirEndCancelProrrata" style="document" />
+      <wsdl:input name="EmiEndCancelProrrataRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmiEndResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargaListaMotivoCancelaciones">
+      <soap12:operation soapAction="CargaListaMotivoCancelaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPolizaReciboYFormatosPago">
+      <soap12:operation soapAction="ObtenerPolizaReciboYFormatosPago" style="document" />
+      <wsdl:input name="PolizaAImprimir">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ByteArrayMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRecibosDesglosados">
+      <soap12:operation soapAction="ObtenerRecibosDesglosados" style="document" />
+      <wsdl:input name="ObtenerRecibosDesglosadosRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerRecibosDesglosadosResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagarEmitirCotizacion">
+      <soap12:operation soapAction="PagarEmitirCotizacion" style="document" />
+      <wsdl:input name="EmitirCotizacionRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PagarEmitirCotizacionBrokerResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCaracteristicasVehiculo">
+      <soap12:operation soapAction="ObtenerCaracteristicasVehiculo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTarjetaValida">
+      <soap12:operation soapAction="ObtenerTarjetaValida" style="document" />
+      <wsdl:input name="ValidarTarjetaRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ValidarTarjetaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCotizacion">
+      <soap12:operation soapAction="ObtenerCotizacion" style="document" />
+      <wsdl:input name="CargarCotizacionRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CargarCotizacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInformacionClienteVehiculoScotia">
+      <soap12:operation soapAction="ObtenerInformacionClienteVehiculoScotia" style="document" />
+      <wsdl:input name="InformacionClienteVehiculoScotiaRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="InformacionClienteVehiculoScotiaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarNumeroDeSeriePorUsuario">
+      <soap12:operation soapAction="ValidarNumeroDeSeriePorUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarNumeroDeSerie">
+      <soap12:operation soapAction="ValidarNumeroDeSerie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformacionRecibosScotiabankBL">
+      <soap12:operation soapAction="InformacionRecibosScotiabankBL" style="document" />
+      <wsdl:input name="InformacionRecibosScotiaRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="InformacionRecibosScotiaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConexionKBB">
+      <soap12:operation soapAction="ConexionKBB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVehiculos">
+      <soap12:operation soapAction="ObtenerVehiculos" style="document" />
+      <wsdl:input name="CatVehiculosRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ByteArrayMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsos">
+      <soap12:operation soapAction="ObtenerUsos" style="document" />
+      <wsdl:input name="ObtenerUsosRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerUsosVehiculoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirEndCancelProrrataPorNegocio">
+      <soap12:operation soapAction="EmitirEndCancelProrrataPorNegocio" style="document" />
+      <wsdl:input name="EmiEndCancelProrrataPorNegocioRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmiEndNegocioResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCaracteristicasVehiculoFronterizo">
+      <soap12:operation soapAction="ObtenerCaracteristicasVehiculoFronterizo" style="document" />
+      <wsdl:input name="CaracteristicasVehiculoFronterizoRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CaracteristicasVehiculoFronterizoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerClaveVehiculo">
+      <soap12:operation soapAction="ObtenerClaveVehiculo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetesPermitidos">
+      <soap12:operation soapAction="ObtenerPaquetesPermitidos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSumaAsegurada">
+      <soap12:operation soapAction="ObtenerSumaAsegurada" style="document" />
+      <wsdl:input name="ObtenerSumaAseguradaRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerSumaAseguradaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <soap12:operation soapAction="ValidarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImprimirCotizacion">
+      <soap12:operation soapAction="ImprimirCotizacion" style="document" />
+      <wsdl:input name="GuardarCotizacionRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ImprimirCotizacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrimaNoDevengadaCancelacion">
+      <soap12:operation soapAction="PrimaNoDevengadaCancelacion" style="document" />
+      <wsdl:input name="EmiEndCancelProrrataRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PrimaNoDevengadaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposSumaAseguradasPermitidas">
+      <soap12:operation soapAction="ObtenerTiposSumaAseguradasPermitidas" style="document" />
+      <wsdl:input name="ObtenerTiposSumaAseguradaRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerTiposSumaAseguradaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCodigoDeConfirmacion">
+      <soap12:operation soapAction="ValidarCodigoDeConfirmacion" style="document" />
+      <wsdl:input name="ValidarCodigoDeConfirmacionRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ValidarCodigoDeConfirmacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirMultiCotizacionMesAdicional">
+      <soap12:operation soapAction="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirMultiCotizacionMesAdicional" style="document" />
+      <wsdl:input name="EmitirMultiCotizacionRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmitirMultiCotizacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCotizacionFronterizos">
+      <soap12:operation soapAction="http://hdi.com.mx/services/public/PublicServicesAutosContract/ObtenerCotizacionFronterizos" style="document" />
+      <wsdl:input name="DatosCotizacionFronterizosRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DatosCotizacionFronterizosResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirMultiCotizacionRemanente">
+      <soap12:operation soapAction="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirMultiCotizacionRemanente" style="document" />
+      <wsdl:input name="EmitirRemanenteRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmitirMultiCotizacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Statuseuser">
+      <soap12:operation soapAction="ValidarEstatusUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCotizacionExpress">
+      <soap12:operation soapAction="GuardarCotizacionExpress" style="document" />
+      <wsdl:input name="GuardarCotizacionExpressRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GuardarCotizacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagarReciboPendienteEnLinea">
+      <soap12:operation soapAction="PagarReciboPendienteEnLinea" style="document" />
+      <wsdl:input name="DatosReciboPagoEnLinea">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ParametrosRespuestaPagoRecibo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosCalculoTarificacion">
+      <soap12:operation soapAction="ObtenerDatosCalculoTarificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarVehiculoxagenteAfasa">
+      <soap12:operation soapAction="VerificarVehiculoxagenteAfasa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IniciarViaje">
+      <soap12:operation soapAction="IniciarViaje" style="document" />
+      <wsdl:input name="IniciarViajeRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IniciarViajeResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinalizarViaje">
+      <soap12:operation soapAction="FinalizarViaje" style="document" />
+      <wsdl:input name="FinalizarViajeRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FinalizarViajeResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerViajesCoberturaDinamica">
+      <soap12:operation soapAction="ObtenerViajesCoberturaDinamica" style="document" />
+      <wsdl:input name="ObtenerViajesCoberturaDinamicaRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerViajesCoberturaDinamicaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagarViajeAcumuladoCuandoEsSiniestro">
+      <soap12:operation soapAction="PagarViajeAcumuladoCuandoEsSiniestro" style="document" />
+      <wsdl:input name="PagoViajeAcumuladosRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PagoViajeAcumuladoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerViajesCoberturaDinamicaPolizas">
+      <soap12:operation soapAction="ObtenerViajesCoberturaDinamicaPolizas" style="document" />
+      <wsdl:input name="ObtenerViajesCoberturaDinamicaPolizasRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerViajesCoberturaDinamicaPolizasResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagarRecibo">
+      <soap12:operation soapAction="PagarRecibo" style="document" />
+      <wsdl:input name="PagandoReciboRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ParametrosRespuestaPagoRecibo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagarViaje">
+      <soap12:operation soapAction="PagarViaje" style="document" />
+      <wsdl:input name="PagandoViajeRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ParametrosRespuestaPagoRecibo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFactura">
+      <soap12:operation soapAction="ObtenerFactura" style="document" />
+      <wsdl:input name="ObtenerFacturaRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ByteArrayMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFacturaXml">
+      <soap12:operation soapAction="ObtenerFacturaXml" style="document" />
+      <wsdl:input name="ObtenerXmlRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ByteArrayMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMultiplesFacturas">
+      <soap12:operation soapAction="ObtenerMultiplesFacturasRequest" style="document" />
+      <wsdl:input name="ObtenerMultiplesFacturasRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ByteArrayMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarRelacionGrupoUsuario">
+      <soap12:operation soapAction="ValidarRelacionGrupoUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarAsignaDefaultDatosCliente">
+      <soap12:operation soapAction="ValidarAsignaDefaultDatosCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCatalogoClausulasAdatpatcionesEquipo">
+      <soap12:operation soapAction="ObtenerCatalogoClausulasAdatpatcionesEquipo" style="document" />
+      <wsdl:input name="CatalogoDetallesRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CatalogoDetallesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCotizGuardada">
+      <soap12:operation soapAction="RecuperarCotizGuardada" style="document" />
+      <wsdl:input name="RecuperarCotizGuardadaExpressRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RecuperarCotizacionGuardadaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmiteCotizacionGuardada">
+      <soap12:operation soapAction="EmiteCotizacionGuardada" style="document" />
+      <wsdl:input name="EmiteCotGuardadaRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmiteCotGuardadaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoVehiculo">
+      <soap12:operation soapAction="ObtenerTipoVehiculo" style="document" />
+      <wsdl:input name="ObtenerTipoVehiculoRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerTipoVehiculoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMultiConfiguracionPaquetesExpress">
+      <soap12:operation soapAction="ObtenerMultiConfiguracionPaquetesExpress" style="document" />
+      <wsdl:input name="ObtenerMultiConfiguracionPaquetesExpressRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerPaquetesExpressRespose">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirMultiConfiguracionPaquetesExpress">
+      <soap12:operation soapAction="EmitirMultiConfiguracionPaquetesExpress" style="document" />
+      <wsdl:input name="EmitirMultiCotizacionConfiguracionRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmitirMultiCotizacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMarcas">
+      <soap12:operation soapAction="ObtenerMarcas" style="document" />
+      <wsdl:input name="ObtenerMarcasRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerMarcasResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAgente">
+      <soap12:operation soapAction="ObtenerAgente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposAjuste">
+      <soap12:operation soapAction="ObtenerTiposAjuste" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerTiposAjusteResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetes">
+      <soap12:operation soapAction="ObtenerPaquetes" style="document" />
+      <wsdl:input name="ObtenerPaquetesRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerPaquetesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerServicios">
+      <soap12:operation soapAction="ObtenerServicios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerServiciosResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipos">
+      <soap12:operation soapAction="ObtenerTipos" style="document" />
+      <wsdl:input name="ObtenerTiposRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerTiposResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposFiltrados">
+      <soap12:operation soapAction="ObtenerTiposFiltrados" style="document" />
+      <wsdl:input name="ObtenerTiposFiltradosRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerTiposResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVersiones">
+      <soap12:operation soapAction="ObtenerVersiones" style="document" />
+      <wsdl:input name="ObtenerVersionesRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerVersionesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVehiculoVersiones">
+      <soap12:operation soapAction="ObtenerVehiculoVersionesResponse" style="document" />
+      <wsdl:input name="ObtenerVehiculoVersionesRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerVehiculoVersionesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerModelos">
+      <soap12:operation soapAction="ObtenerModelos" style="document" />
+      <wsdl:input name="ObtenerModelosRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerModelosResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTransmisiones">
+      <soap12:operation soapAction="ObtenerTransmisiones" style="document" />
+      <wsdl:input name="ObtenerTransmisionesRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerTransmisionesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTonelajes">
+      <soap12:operation soapAction="ObtenerTonelajes" style="document" />
+      <wsdl:input name="ObtenerTonelajesRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerTonelajesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRiesgosCarga">
+      <soap12:operation soapAction="ObtenerRiesgosCarga" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerRiesgosCargaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRiesgosCargaPorNegocio">
+      <soap12:operation soapAction="ObtenerRiesgosCargaPorNegocio" style="document" />
+      <wsdl:input name="StringMessage">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerRiesgosCargaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRemolques">
+      <soap12:operation soapAction="ObtenerRemolques" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerRemolquesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDescripciones">
+      <soap12:operation soapAction="ObtenerDescripciones" style="document" />
+      <wsdl:input name="ObtenerDescripcionesRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerDescripcionesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRiesgos">
+      <soap12:operation soapAction="ObtenerRiesgos" style="document" />
+      <wsdl:input name="ObtenerRiesgosRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerRiesgosResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMotivosAjuste">
+      <soap12:operation soapAction="ObtenerMotivosAjuste" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerMotivosAjusteResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerParentescos">
+      <soap12:operation soapAction="ObtenerParentescos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerParentescosResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposCuenta">
+      <soap12:operation soapAction="ObtenerTiposCuenta" style="document" />
+      <wsdl:input name="ObtenerTiposCuentaRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerTiposCuentaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposBeneficiarioPreferente">
+      <soap12:operation soapAction="ObtenerTiposBeneficiarioPreferente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerTiposBeneficiarioPreferenteResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoUbicacion">
+      <soap12:operation soapAction="ObtenerInfoUbicacion" style="document" />
+      <wsdl:input name="ObtenerInfoUbicacionRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerInfoUbicacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMunicipios">
+      <soap12:operation soapAction="ObtenerMunicipios" style="document" />
+      <wsdl:input name="ObtenerMunicipiosRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerMunicipiosResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstadoCivil">
+      <soap12:operation soapAction="ObtenerEstadoCivil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerEstadoCivilResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSexo">
+      <soap12:operation soapAction="ObtenerSexo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerSexoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaises">
+      <soap12:operation soapAction="ObtenerPaises" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerPaisesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNacionalidades">
+      <soap12:operation soapAction="ObtenerNacionalidades" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerNacionalidadesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstados">
+      <soap12:operation soapAction="ObtenerEstados" style="document" />
+      <wsdl:input name="ObtenerEstadosRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerEstadosResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerZonas">
+      <soap12:operation soapAction="ObtenerZonas" style="document" />
+      <wsdl:input name="ObtenerZonasRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerZonasResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerZona">
+      <soap12:operation soapAction="ObtenerZona" style="document" />
+      <wsdl:input name="ObtenerZonasRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IntMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestUser">
+      <soap12:operation soapAction="TestUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TestUserResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposVehiculo">
+      <soap12:operation soapAction="ObtenerTiposVehiculo" style="document" />
+      <wsdl:input name="ObtenerTiposVehiculoRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerTiposVehiculoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerLugarCirculacion">
+      <soap12:operation soapAction="ObtenerLugarCirculacion" style="document" />
+      <wsdl:input name="ObtenerLugarCirculacionRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerLugarCirculacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProveedoresAsistencia">
+      <soap12:operation soapAction="ObtenerProveedoresAsistencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerProveedoresAsistenciaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDeducibles">
+      <soap12:operation soapAction="ObtenerDeducibles" style="document" />
+      <wsdl:input name="ObtenerDeduciblesRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerDeduciblesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFormasPago">
+      <soap12:operation soapAction="ObtenerFormasPago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerFormasPagoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCanalesVenta">
+      <soap12:operation soapAction="ObtenerCanalesVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerCanalesVentaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCoberturas">
+      <soap12:operation soapAction="ObtenerCoberturas" style="document" />
+      <wsdl:input name="ObtenerCoberturasRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerCoberturasResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdateScripts">
+      <soap12:operation soapAction="GetUpdateScripts" style="document" />
+      <wsdl:input name="GetUpdateScriptsRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUpdateScriptsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructChangeScripts">
+      <soap12:operation soapAction="GetStructChangeScripts" style="document" />
+      <wsdl:input name="GetStructChangeScriptsRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetStructChangeScriptsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap12:operation soapAction="GetData" style="document" />
+      <wsdl:input name="GetDataRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ByteArrayMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <soap12:operation soapAction="GetGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetGroupsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <soap12:operation soapAction="RegisterUser" style="document" />
+      <wsdl:input name="RegisterUserRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ByteArrayMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileUpdateInfo">
+      <soap12:operation soapAction="GetFileUpdateInfo" style="document" />
+      <wsdl:input name="GetFileUpdateInfoRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetFileUpdateInfoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <soap12:operation soapAction="GetFile" style="document" />
+      <wsdl:input name="GetFileRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ByteArrayMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPolizaPDF">
+      <soap12:operation soapAction="ObtenerPolizaPDF" style="document" />
+      <wsdl:input name="PolizaAImprimir">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ByteArrayMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerReciboPDF">
+      <soap12:operation soapAction="ObtenerReciboPDF" style="document" />
+      <wsdl:input name="PolizaAImprimir">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ByteArrayMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPolizaYReciboPDF">
+      <soap12:operation soapAction="ObtenerPolizaYReciboPDF" style="document" />
+      <wsdl:input name="PolizaAImprimir">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ByteArrayMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCiudades">
+      <soap12:operation soapAction="ObtenerCiudades" style="document" />
+      <wsdl:input name="ObtenerCiudadesRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerCiudadesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInformacionVehiculo">
+      <soap12:operation soapAction="ObtenerInformacionVehiculo" style="document" />
+      <wsdl:input name="ObtenerInformacionVehiculoRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerInformacionVehiculoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCotizacion">
+      <soap12:operation soapAction="GuardarCotizacion" style="document" />
+      <wsdl:input name="GuardarCotizacionRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GuardarCotizacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCotizacionPorNegocio">
+      <soap12:operation soapAction="GuardarCotizacionPorNegocio" style="document" />
+      <wsdl:input name="GuardarCotizacionRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GuardarCotizacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarCotizacionPorNegocio">
+      <soap12:operation soapAction="CargarCotizacionPorNegocio" style="document" />
+      <wsdl:input name="CotizacionRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CotizacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerConducto">
+      <soap12:operation soapAction="ObtenerConducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerConductoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBancos">
+      <soap12:operation soapAction="ObtenerBancos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerBancosResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerOcupaciones">
+      <soap12:operation soapAction="ObtenerOcupaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerOcupacionesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerOcupacionesConductor">
+      <soap12:operation soapAction="ObtenerOcupacionesConductor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerOcupacionesConductorResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirCotizacion">
+      <soap12:operation soapAction="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirCotizacion" style="document" />
+      <wsdl:input name="EmitirCotizacionRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmitirCotizacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirMultiCotizacion">
+      <soap12:operation soapAction="http://hdi.com.mx/services/public/PublicServicesAutosContract/EmitirMultiCotizacion" style="document" />
+      <wsdl:input name="EmitirMultiCotizacionRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmitirMultiCotizacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirCotizDirec">
+      <soap12:operation soapAction="EmitirCotizDirec" style="document" />
+      <wsdl:input name="EmitirCotizDirectRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmitirCotizacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirCotizDirecVirtual">
+      <soap12:operation soapAction="EmitirCotizDirecVirtual" style="document" />
+      <wsdl:input name="EmitirCotizDirectRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StringMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaEstatusCotiz">
+      <soap12:operation soapAction="ActualizaEstatusCotiz" style="document" />
+      <wsdl:input name="ActualizaEstatusCotizRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarPoliza">
+      <soap12:operation soapAction="SolicitarPoliza" style="document" />
+      <wsdl:input name="SolicitarPolizaRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SolicitarPolizaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCotizacionCorreo">
+      <soap12:operation soapAction="EnviarCotizacionCorreo" style="document" />
+      <wsdl:input name="DatosEnvioCorreo">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IntMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCotizacionCorreoSinGuardar">
+      <soap12:operation soapAction="EnviarCotizacionCorreoSinGuardar" style="document" />
+      <wsdl:input name="DatosEnvioCorreo">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IntMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarPolizaCorreo">
+      <soap12:operation soapAction="EnviarPolizaCorreo" style="document" />
+      <wsdl:input name="DatosEnvioCorreo">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IntMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirCotizacionAgente">
+      <soap12:operation soapAction="EmitirCotizacionAgente" style="document" />
+      <wsdl:input name="EmitirCotizacionAgenteRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EmitirCotizacionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaPolizaAgente">
+      <soap12:operation soapAction="SolicitaPolizaAgente" style="document" />
+      <wsdl:input name="SolicitarPolizaAgenteRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SolicitarPolizaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetesAgente">
+      <soap12:operation soapAction="ObtenerPaquetesAgente" style="document" />
+      <wsdl:input name="ObtenerPaquetesAgenteRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerPaquetesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LimpiarCache">
+      <soap12:operation soapAction="LimpiarCache" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPolizaResumen">
+      <soap12:operation soapAction="ObtenerPolizaResumen" style="document" />
+      <wsdl:input name="ObtenerPolizasRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerPolizaResumenResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPolizaRecibos">
+      <soap12:operation soapAction="ObtenerPolizaRecibos" style="document" />
+      <wsdl:input name="ObtenerPolizasRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerRecibosResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetesExpress">
+      <soap12:operation soapAction="ObtenerPaquetesExpress" style="document" />
+      <wsdl:input name="ObtenerPaquetesExpressRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerPaquetesExpressRespose">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaquetesExpressBroker">
+      <soap12:operation soapAction="ObtenerPaquetesExpressBroker" style="document" />
+      <wsdl:input name="ObtenerPaquetesExpressBrokerRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerPaquetesExpressBrokerResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagarEmitirCotizacionBroker">
+      <soap12:operation soapAction="PagarEmitirCotizacionBroker" style="document" />
+      <wsdl:input name="PagarEmitirCotizacionBrokerRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PagarEmitirCotizacionBrokerResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMultiPaquetesMixto">
+      <soap12:operation soapAction="ObtenerMultiPaquetesMixto" style="document" />
+      <wsdl:input name="ObtenerPaquetesMixtoRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerPaquetesMixtoRespose">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMultiPaquetesExpress">
+      <soap12:operation soapAction="ObtenerMultiPaquetesExpress" style="document" />
+      <wsdl:input name="ObtenerPaquetesExpressRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerPaquetesExpressRespose">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMultiPaquetesExpressPorNegocio">
+      <soap12:operation soapAction="ObtenerMultiPaquetesExpressPorNegocio" style="document" />
+      <wsdl:input name="ObtenerPaquetesExpressPorNegocioRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ObtenerPaquetesExpressRespose">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPolizaSinRecibosPDF">
+      <soap12:operation soapAction="ObtenerPolizaSinRecibosPDF" style="document" />
+      <wsdl:input name="PolizaAImprimir">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ByteArrayMessage">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PublicServicesAutos">
+    <wsdl:port name="ClearUsernameBinding_PublicServicesAutosContract" binding="tns:ClearUsernameBinding_PublicServicesAutosContract">
+      <soap12:address location="http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://enterpriseservices.hdi.com.mx/B2B/Partners/WCF/Autos/PublicServicesAutos.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
